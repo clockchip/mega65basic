@@ -43,7 +43,7 @@
       },
       "snippets": [
         {
-           "language": "bas",
+           "language": "mega65basic",
            "path": "./snippets.json"
         }
      ]
