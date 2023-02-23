@@ -22,6 +22,19 @@
     "pet"
   ],  
   "contributes": {
+    "themes": [
+      {
+          "id": "Visual Studio Dark - mega65basic",
+          "label": "Dark (Visual Studio - mega65basic)",
+          "uiTheme": "vs-dark",
+          "path": "./themes/mega65basic_dark_vs.json"
+      },
+      {
+          "id": "Visual Studio Light - mega65basic",
+          "label": "Light (Visual Studio - mega65basic)",
+          "uiTheme": "vs",
+          "path": "./themes/mega65basic_light_vs.json"
+      }],    
     "languages": [{
       "id": "mega65basic",
       "aliases": ["Mega65 Basic", "mega65basic"],
