@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Mega65 Basic Language",
+	"name": "Mega65 Basic",
 	"patterns": [
 		{
 			"include": "#control"
@@ -36,74 +36,74 @@
 	"repository": {
 		"func": {
 			"patterns": [{
-				"name": "entity.name.function.bas",
+				"name": "entity.name.function.mega65basic",
 				"match": "(def fn|fn)\\s+([a-z0-9]+)",
 				"captures": {
 					"1": {
-						"name": "keyword.control.bas"
+						"name": "keyword.control.mega65basic"
 					},
 					"2": {
-						"name": "entity.name.function.bas"
+						"name": "entity.name.function.mega65basic"
 					}
 				}
 			}]
 		},			
 		"comments": {
 			"patterns": [{
-				"name": "comment.line.bas",
+				"name": "comment.line.mega65basic",
 				"match": "(rem)(.*)"
 			}]
 		},
 		"vardefs": {
 			"patterns": [{
-				"name": "storage.modifier.bas",
+				"name": "storage.modifier.mega65basic",
 				"match": "(dim|data|let)"
 			}]
 		},	
 		"numerics": {
 			"patterns": [{
-				"name": "constant.numeric.bas",
+				"name": "constant.numeric.mega65basic",
 				"match": "([0-9]+)"
 			}]
 		},
 		"graphics": {
 			"patterns": [{
-				"name": "keyword.graphics.bas",
+				"name": "keyword.graphics.mega65basic",
 				"match": "(dot|scnclr|screen|screen clr|screen def|screen set|screen open|screen close|palette|palette color|palette restore|pen)"
 			}]
 		},
 		"control": {
 			"patterns": [{
-				"name": "keyword.control.bas",
+				"name": "keyword.control.mega65basic",
 		    	"match": "(end|for|gosub|goto|if|next|return|step|stop|then|to)"
 			}]
 		},			
 		"other": {
 			"patterns": [{
-				"name": "keyword.other.bas",
+				"name": "keyword.other.mega65basic",
 		    	"match": "(abs|asc|atn|close|clr|cmd|cont|cos|data|def|exp|fre|getkey|get|get#|input|input#|int|len|let|line|list|load|log|new|next|on|open|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|spc|sqr|status|st|stop|sys|tab|tan|time|ti|time|ti|usr|val|verify|wait)"
 			}]
 		},
 		"otherString": {
 			"patterns": [{
-				"name": "keyword.other.bas",
+				"name": "keyword.other.mega65basic",
 		    	"begin": "(chr|left|mid|right|str|time|ti)",
 				"end": "\\$"
 			}]
 		},
 		"operators": {
 			"patterns": [{
-				"name": "keyword.operator.bas",
+				"name": "keyword.operator.mega65basic",
 				"match": "(\\*|/|\\+|-|\\^|=|<>|<|>|<=|=<|>=|=>|and|or|not)"
 			}]
 		},		
 		"strings": {
-			"name": "string.quoted.double.bas",
+			"name": "string.quoted.double.mega65basic",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.bas",
+					"name": "constant.character.escape.mega65basic",
 					"match": "\\\\."
 				}
 			]
