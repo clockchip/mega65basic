@@ -1,0 +1,25 @@
+{
+  "name": "mega65basic",
+  "displayName": "mega65basic",
+  "description": "Syntax highlighting and snippets for Mega65 Basic language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mega65basic",
+      "aliases": ["Mega65 Basic", "mega65basic"],
+      "extensions": [".bas"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mega65basic",
+      "scopeName": "source.bas",
+      "path": "./syntaxes/mega65basic.tmLanguage.json"
+    }]
+  }
+}
