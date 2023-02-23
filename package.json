@@ -2,24 +2,50 @@
   "name": "mega65basic",
   "displayName": "mega65basic",
   "description": "Syntax highlighting and snippets for Mega65 Basic language",
+  "publisher": "clockchip",
+  "author": "clockchip",
   "version": "0.0.1",
+  "license": "BSD-3-Clause License",
   "engines": {
     "vscode": "^1.75.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets",
+    "Other"
   ],
+  "keywords": [
+    "Mega65",
+    "basic",
+    "basic language",
+    "commodore",
+    "pet"
+  ],  
   "contributes": {
     "languages": [{
       "id": "mega65basic",
       "aliases": ["Mega65 Basic", "mega65basic"],
-      "extensions": [".bas"],
+      "extensions": [".bas","prg"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
       "language": "mega65basic",
       "scopeName": "source.bas",
       "path": "./syntaxes/mega65basic.tmLanguage.json"
-    }]
+    }],
+    "configurationDefaults": {
+      "[bas]": {
+          "editor.rulers": [
+              40,
+              80
+          ]
+       }
+      },
+      "snippets": [
+        {
+           "language": "bas",
+           "path": "./snippets.json"
+        }
+     ]
   }
 }
