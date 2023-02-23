@@ -30,7 +30,7 @@
     }],
     "grammars": [{
       "language": "mega65basic",
-      "scopeName": "source.bas",
+      "scopeName": "source.mega65basic",
       "path": "./syntaxes/mega65basic.tmLanguage.json"
     }],
     "configurationDefaults": {
