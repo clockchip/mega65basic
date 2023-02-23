@@ -25,7 +25,7 @@
     "languages": [{
       "id": "mega65basic",
       "aliases": ["Mega65 Basic", "mega65basic"],
-      "extensions": [".bas","prg"],
+      "extensions": [".bas",".prg"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
@@ -34,7 +34,7 @@
       "path": "./syntaxes/mega65basic.tmLanguage.json"
     }],
     "configurationDefaults": {
-      "[bas]": {
+      "[mega65basic]": {
           "editor.rulers": [
               40,
               80
