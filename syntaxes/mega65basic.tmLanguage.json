@@ -3,26 +3,26 @@
 	"name": "Mega65 Basic",
 	"patterns": [
 		{
-			"include": "#control"
+			"include": "#comments"
 		},
+		{
+			"include": "#control"
+		},			
 		{
 			"include": "#operators"
 		},
 		{
 			"include": "#graphics"
-		},		
+		},			
 		{
 			"include": "#other"
-		},
+		},		
 		{
 			"include": "#otherString"
 		},
 		{
 			"include": "#strings"
-		},
-		{
-			"include": "#comments"
-		},
+		},	
 		{
 			"include": "#numerics"
 		},
@@ -31,7 +31,7 @@
 		},
 		{
 			"include": "#func"
-		}
+		}				
 	],
 	"repository": {
 		"func": {
