@@ -10,7 +10,10 @@
 		},
 		{
 			"include": "#dos"
-		},			
+		},	
+		{
+			"include": "#draw"
+		},				
 		{
 			"include": "#graphics"
 		},			
@@ -71,13 +74,20 @@
 		},
 		"dos": {
 			"patterns": [{
-				"name": "keyword.graphics.mega65basic",
-				"match": "(append|)"
-			}],		
+				"name": "keyword.dos.mega65basic",
+				"match": "(append#|backup|test|test-a)"
+			}]	
+		},		
+		"draw": {
+			"patterns": [{
+				"name": "keyword.draw.mega65basic",
+				"match": "(dot|pen|line|circle)"
+			}]
+		},		
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(dot|scnclr|screen|screen clr|screen def|screen set|screen open|screen close|palette|palette color|palette restore|pen)"
+				"match": "(background|scnclr|screen|screen clr|screen def|screen set|screen open|screen close|palette|palette color|palette restore)"
 			}]
 		},
 		"control": {
@@ -94,7 +104,7 @@
 		},
 		"otherString": {
 			"patterns": [{
-				"name": "keyword.other.mega65basic",
+				"name": "keyword.otherString.mega65basic",
 		    	"begin": "(chr|left|mid|right|str|time|ti)",
 				"end": "\\$"
 			}]

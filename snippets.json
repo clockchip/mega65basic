@@ -1,25 +1,81 @@
 {
+	"test": {
+        "prefix": ["test-a", "test"], 
+        "body": [
+            "function ${1:Verb-Noun} {",
+            "\t[CmdletBinding()]",
+            "\tparam (",
+            "\t\t$0",
+            "\t)",
+            "\t",
+            "\tbegin {",
+            "\t}",
+            "\t",
+            "\tprocess {",
+            "\t}",
+            "\t",
+            "\tend {",
+            "\t}",
+            "}"
+        ],
+        "description": "Script cmdlet definition snippet"
+    },	
 	"abs": {
 		"prefix": "abs",
 		"body": [
-			"abs(${1:<numeric expression>})$0"
+			"abs(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "ABS returns the absolute value of the numeric argument x."
 	},
+	"and": {
+		"prefix": "and",
+		"body": [
+			"and ${1:<OPERAND>}$0"
+		],
+		"description": "AND performs a bit-wise logical AND operation on two 16-bit values."
+	},
+	"append#": {
+		"prefix": "append#",
+		"body": [
+			"append#${1:<CHANNEL>},\"${2:FILENAME}\"${3:,d(${4:[DRIVE]})}${5:,u(${6:[UNIT]})}$0"
+		],
+		"description": "Opens an existing sequential file of type SEQ or USR for writing, and positions the write pointer at the end of the file."
+	},		
 	"asc": {
 		"prefix": "asc",
 		"body": [
-			"asc(${1:<string>})$0"
+			"asc(\"${1:<STRING>}\")$0"
 		],
-		"description": "The ASC keyword takes the first char of a string and maps it to the numeric index of the Commodore ASCII-table."
+		"description": "Takes the first character of the string argument and returns its numeric code value. The name was apparently chosen to be a mnemonic to ASCII, but the returned value is in fact the so-called PETSCII code."
 	},
 	"atn": {
 		"prefix": "atn",
 		"body": [
-			"atn(${1:<numeric expression>})$0"
+			"atn(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "The numerical function ATN is a mathematical function that returns the arc tangent of a numeric value (the inverse function of TAN)."
 	},
+	"background": {
+		"prefix": "background",
+		"body": [
+			"background ${1:<COLOUR>}$0"
+		],
+		"description": "Sets the background colour of the screen to the argument, which must be in the range of 0 to 255."
+	},
+	"backup u": {
+		"prefix": "backup",
+		"body": [
+			"backup u${1|8,9|} to u${2|9,8|}$0"
+		],
+		"description": "The first form of BACKUP, specifying units for source and target can only be used for the drives connected to the internal FDC (Floppy Disk Controller). Units 8 and 9 are reserved for this controller."
+	},
+	"backup d": {
+		"prefix": "backup",
+		"body": [
+			"backup d${1|0,1|} to d${2|1,0|}${3:, u(${4:<UNIT>})}$0"
+		],
+		"description": "The second form of BACKUP, specifying drives for source and target, is meant to be used for dual drive units connected to the IEC bus. For example: CBM 4040, 8050, 8250 via an IEEE-488 to IEC adapter."
+	},		
 	"chr": {
 		"prefix": "chr",
 		"body": [
