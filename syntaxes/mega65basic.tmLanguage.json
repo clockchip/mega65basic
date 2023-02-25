@@ -3,8 +3,8 @@
 	"name": "Mega65 Basic",
 	"patterns": [
 		{
-			"include": "#graphics"
-		},
+			"include": "#dos"
+		},		
 		{
 			"include": "#control"
 		},			
@@ -12,8 +12,8 @@
 			"include": "#operators"
 		},
 		{
-			"include": "#dos"
-		},	
+			"include": "#graphics"
+		},			
 		{
 			"include": "#draw"
 		},							
@@ -75,19 +75,19 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|test|test-a)"
+				"match": "(append#|boot|backup|bank|bload|bsave|bverify|catalog|clrbit|clr|setbit|set|sys|disk|def|verify)"
 			}]	
 		},		
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(dot|pen|line|circle)"
+				"match": "(box|dot|pen|line|circle)"
 			}]
 		},		
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|color|foreground|scnclr|screen|palette)"
+				"match": "(background|border|bump|color|foreground|scnclr|screen|palette)"
 			}]
 		},
 		"control": {
@@ -99,7 +99,7 @@
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|close|clr|cmd|cont|cos|data|def|exp|fre|getkey|get|get#|input|input#|int|len|let|line|list|load|log|new|next|on|open|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|spc|sqr|status|st|stop|sys|tab|tan|time|ti|time|ti|usr|val|verify|wait)"
+		    	"match": "(abs|asc|atn|close|clr|cmd|cont|cos|data|exp|fre|getkey|get|get#|input|input#|int|len|let|line|list|load|log|new|next|on|open|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|usr|val|wait)"
 			}]
 		},
 		"otherString": {

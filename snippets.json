@@ -96,7 +96,70 @@
 			"bend"
 		],
 		"description": "BEGIN and BEND act as a pair of braces around a compound statement to be executed after THEN or ELSE. This overcomes the single line limitation of the standard IF ... THEN ... ELSE clause."
-	},		
+	},
+	"bload": {
+		"prefix": "bload",
+		"body": [
+			"bload ${1:<FILENAME>}${2:, b${3:<BANK>}}${4:, p${5:<MEMORY ADDRESS>}}${6:, r}${7:, d${8:<DRIVE>}}${9:, u${10:<UNIT>}}$0"
+		],
+		"description": "The command BLOAD (Binary LOAD) loads a file of type PRG into RAM at address P."
+	},
+	"boot": {
+		"prefix": "boot",
+		"body": [
+			"boot ${1:${2:<FILENAME>}${3:,B${4:<BANK>}}${5:,P${6:<MEMORY ADDRESS>}}${7:,D${8:<DRIVE>}}${9:,U${10:<UNIT>}}}$0"
+		],
+		"description": "BOOT filename loads a file of type PRG into RAM at address P and bank B, and starts executing the code at the load address. BOOT with no parameters attempts to load and execute a file named AUTOBOOT.C65 from the default unit 8."
+	},
+	"bootsys": {
+		"prefix": "boot",
+		"body": [
+			"boot sys"
+		],
+		"description": "BOOT SYS loads the boot sector from sector 0, track 1 and unit 8 to address $0400 in bank 0, and performs a JSR $0400 afterwards (Jump To Subroutine)."
+	},	
+	"border": {
+		"prefix": "border",
+		"body": [
+			"border ${1:<COLOUR>}$0"
+		],
+		"description": "Sets the border colour of the screen to the argument, which must be in the range of 0 to 255."
+	},
+	"box": {
+		"prefix": "box",
+		"body": [
+			"box ${1:<X0>},${2:<Y0>}${3:, ${4:<X1>},${5:<Y1>}}, ${6:<X2>},${7:<Y2>}${8:, ${9:<X3>},${10:<Y3>}}${11:, solid}$0"
+		],
+		"description": "The first form of BOX with two coordinate pairs and an optional solid parameter draws a simple rectangle, assuming that the coordinate pairs declare two diagonally opposite corners. The second form with four coordinate pairs declares a path of four points, which will be connected with lines. The path is closed by connecting the last coordinate with the first."
+	},
+	"bsave": {
+		"prefix": "bsave",
+		"body": [
+			"bsave ${1:<FILENAME>}, p${2:<START ADDRESS>} to p${3:<END ADDRESS>}${4:, b${5:<BANK NUMBER>}}${6:, d${7:<DRIVE>}}${9:, u${10:<UNIT>}}$0"
+		],
+		"description": "The command BSAVE (Binary SAVE) saves a memory range to a file of type PRG."
+	},
+	"bump": {
+		"prefix": "bump",
+		"body": [
+			"bump (${1:<TYPE>})$0"
+		],
+		"description": "Used to detect sprite-sprite (type=1) or sprite-data (type=2) collisions. The return value is an 8-bit mask with one bit per sprite.5."
+	},
+	"bverify": {
+		"prefix": "bverify",
+		"body": [
+			"bverify ${1:<FILENAME>}${2:, p${3:<MEMORY ADDRESS>}}${4:, b${5:<BANK NUMBER>}}${6:, d${7:<DRIVE>}}${8:, u${9:<UNIT>}}$0"
+		],
+		"description": "The command BVERIFY (Binary VERIFY) compares a memory range to a file of type PRG."
+	},
+	"catalog": {
+		"prefix": "catalog",
+		"body": [
+			"catalog ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+		],
+		"description": "Prints a file catalog/directory of the specified disk."
+	},											
 	"chr": {
 		"prefix": "chr",
 		"body": [
@@ -111,6 +174,20 @@
 		],
 		"description": "The BASIC command CLOSE is used for closing currently opened files or drive numbers."
 	},
+	"clr": {
+		"prefix": "clr",
+		"body": [
+			"clr ${1:<VARIABLE>}$0"
+		],
+		"description": "Used for management of BASIC variables, arrays and strings. The runtime stack pointers, and the table of open channels is reset. After executing CLR all variables and arrays will be undeclared."
+	},	
+	"clrbit": {
+		"prefix": "clrbit",
+		"body": [
+			"clrbit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
+		],
+		"description": "Clears (resets) a single bit at the memory address. The bit number is a value in the range of 0-7."
+	},	
 	"cmd": {
 		"prefix": "cmd",
 		"body": [
@@ -397,13 +474,27 @@
 	"remMultiline": {
 		"prefix": "rem",
 		"body": [
-			"rem",
-			"rem ${1:<comment>}",
-			"rem",
+			"${1:<LINE NUMBER>} rem *********************************",
+			"${2:<LINE NUMBER>} rem ***  ${3:<comment>}  ***",
+			"${4:<LINE NUMBER>} rem *********************************",
 			"$0"
 		],
 		"description": "The BASIC comment."
 	},
+	"remHeader": {
+		"prefix": "rem",
+		"body": [
+			"${1:<LINE NUMBER>} rem *********************************",
+			"${2:<LINE NUMBER>} rem ***                           ***",
+			"${3:<LINE NUMBER>} rem ***  ${4:<PROGRAM NAME>}     ***",
+			"${5:<LINE NUMBER>} rem ***                           ***",
+			"${6:<LINE NUMBER>} rem ***  by ${7:<NAME>} $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR  ***",			
+			"${8:<LINE NUMBER>} rem ***                           ***",
+			"${9:<LINE NUMBER>} rem *********************************",
+			"$0"
+		],
+		"description": "The BASIC comment."
+	},	
 	"right$": {
 		"prefix": "right$",
 		"body": [
@@ -474,6 +565,34 @@
 		],
 		"description": "Closes screen (0-3) and frees resources. "
 	}, 		
+	"setDef": {
+		"prefix": "set",
+		"body": [
+			"set def ${1:<UNIT>}$0"
+		],
+		"description": "SET DEF redefines the default unit for disk access, which is initialised to 8 by the DOS. Commands that do not explicitly specify a unit will use this default unit."
+	},
+	"setDis": {
+		"prefix": "set",
+		"body": [
+			"set disk ${1:<OLD UNIT>} to ${2:<NEW UNIT>}$0"
+		],
+		"description": "SET DISK is used to change the unit number of a disk drive temporarily."
+	},
+	"setVer": {
+		"prefix": "set",
+		"body": [
+			"set verify ${1|on,off|}$0"
+		],
+		"description": "SET VERIFY enables or disables the DOS verify-after-write mode for 3.5 drives."
+	},
+	"setbit": {
+		"prefix": "setbit",
+		"body": [
+			"setbit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
+		],
+		"description": "Sets a single bit at the address. The bit number is a value in the range of 0-7."
+	},		
 	"sgn": {
 		"prefix": "sgn",
 		"body": [
