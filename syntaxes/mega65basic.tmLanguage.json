@@ -3,6 +3,9 @@
 	"name": "Mega65 Basic",
 	"patterns": [
 		{
+			"include": "#graphics"
+		},
+		{
 			"include": "#control"
 		},			
 		{
@@ -13,10 +16,7 @@
 		},	
 		{
 			"include": "#draw"
-		},				
-		{
-			"include": "#graphics"
-		},			
+		},							
 		{
 			"include": "#other"
 		},		
@@ -75,7 +75,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|test|test-a)"
+				"match": "(append#|backup|bank|test|test-a)"
 			}]	
 		},		
 		"draw": {
@@ -87,13 +87,13 @@
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|scnclr|screen|screen clr|screen def|screen set|screen open|screen close|palette|palette color|palette restore)"
+				"match": "(background|color|foreground|scnclr|screen|palette)"
 			}]
 		},
 		"control": {
 			"patterns": [{
 				"name": "keyword.control.mega65basic",
-		    	"match": "(end|for|gosub|goto|if|next|return|step|stop|then|to)"
+		    	"match": "(begin|bend|end|for|gosub|goto|if|next|return|step|stop|then|to)"
 			}]
 		},			
 		"other": {

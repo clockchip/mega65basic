@@ -37,7 +37,7 @@
 	"append#": {
 		"prefix": "append#",
 		"body": [
-			"append#${1:<CHANNEL>},\"${2:FILENAME}\"${3:,d(${4:[DRIVE]})}${5:,u(${6:[UNIT]})}$0"
+			"append#${1:<CHANNEL>},${2:<FILENAME>}${3:,d(${4:<DRIVE>})}${5:,u(${6:<UNIT>})}$0"
 		],
 		"description": "Opens an existing sequential file of type SEQ or USR for writing, and positions the write pointer at the end of the file."
 	},		
@@ -62,19 +62,40 @@
 		],
 		"description": "Sets the background colour of the screen to the argument, which must be in the range of 0 to 255."
 	},
-	"backup u": {
+	"backupU": {
 		"prefix": "backup",
 		"body": [
 			"backup u${1|8,9|} to u${2|9,8|}$0"
 		],
 		"description": "The first form of BACKUP, specifying units for source and target can only be used for the drives connected to the internal FDC (Floppy Disk Controller). Units 8 and 9 are reserved for this controller."
 	},
-	"backup d": {
+	"backupD": {
 		"prefix": "backup",
 		"body": [
-			"backup d${1|0,1|} to d${2|1,0|}${3:, u(${4:<UNIT>})}$0"
+			"backup d${1|0,1|} to d${2|1,0|}${3:, u${4:<UNIT>}}$0"
 		],
 		"description": "The second form of BACKUP, specifying drives for source and target, is meant to be used for dual drive units connected to the IEC bus. For example: CBM 4040, 8050, 8250 via an IEEE-488 to IEC adapter."
+	},	
+	"bank": {
+		"prefix": "bank",
+		"body": [
+			"bank ${1:<BANK NUMBER>}$0"
+		],
+		"description": "Selects the memory configuration for BASIC commands that use 16-bit addresses."
+	},
+	"begin": {
+		"prefix": "begin",
+		"body": [
+			"begin"
+		],
+		"description": "BEGIN and BEND act as a pair of braces around a compound statement to be executed after THEN or ELSE. This overcomes the single line limitation of the standard IF ... THEN ... ELSE clause."
+	},
+	"bend": {
+		"prefix": "bend",
+		"body": [
+			"bend"
+		],
+		"description": "BEGIN and BEND act as a pair of braces around a compound statement to be executed after THEN or ELSE. This overcomes the single line limitation of the standard IF ... THEN ... ELSE clause."
 	},		
 	"chr": {
 		"prefix": "chr",
@@ -97,6 +118,13 @@
 		],
 		"description": "The BASIC command CMD changes the data output from the screen to another peripheral device like datasette, modem, printer or disk drive. "
 	},
+	"color": {
+		"prefix": "color",
+		"body": [
+			"color ${1:<COLOUR>}$0"
+		],
+		"description": "The command works in the same way as FOREGROUND, i.e: sets the foreground colour (text colour) of the screen to the colour argument, which must be in the range of 0 to 31."
+	},	
 	"cos": {
 		"prefix": "cos",
 		"body": [
@@ -155,6 +183,13 @@
 		],
 		"description": "The BASIC command FOR is the start command of a FOR…TO…NEXT loop."
 	},
+	"foreground": {
+		"prefix": "foreground",
+		"body": [
+			"foreground ${1:<COLOUR>}$0"
+		],
+		"description": "Sets the foreground colour (text colour) of the screen to the argument, which must be in the range of 0 to 31."
+	},	
 	"fors": {
 		"prefix": "fors",
 		"body": [
@@ -291,19 +326,19 @@
 	"palette": {
 		"prefix": "palette",
 		"body": [
-			"palette ${1:<screen>},${2:<color>},${3:<red>},${4:<green>},${5:<blue>}$0"
+			"palette ${1:<SCREEN NUMBER>},${2:<COLOUR>},${3:<RED>},${4:<GREEN>},${5:<BLUE>}$0"
 		],
 		"description": "PALETTE can be used to change an entry of the system colour palette, or the palette of a screen. "
 	},
 	"paletteCol": {
-		"prefix": "palette color",
+		"prefix": "palette",
 		"body": [
-			"palette color ${1:<color>},${2:<red>},${3:<green>},${4:<blue>}$0"
+			"palette color ${1:<COLOUR>},${2:<RED>},${3:<GREEN>},${4:<BLUE>}$0"
 		],
 		"description": "COLOR keyword for changing system palette. "
 	},	
 	"paletteRes": {
-		"prefix": "palette restore",
+		"prefix": "palette",
 		"body": [
 			"palette restore$0"
 		],
@@ -390,59 +425,52 @@
 		],
 		"description": "A written BASIC or computer code program, which exists in temporary RAM-memory, can be saved with the BASIC command SAVE permanently to a storage device such as a datasette, diskdrive or harddisk as a filetype program (PRG)."
 	},
-    "scnclrColor": {
+    "scnclr": {
 		"prefix": "scnclr",
 		"body": [
-			"scnclr ${1:<number>}$0"
+			"scnclr ${1:<COLOUR>}$0"
 		],
-		"description": "SCNCLR colour clears the graphic screen by filling it with the given colour."
-	},    
-	"scnclrText": {
-		"prefix": "scnclr",
-		"body": [
-			"scnclr $0"
-		],
-		"description": "SCNCLR (with no arguments) clears the current text window. "
-	},    
+		"description": "SCNCLR colour clears the graphic screen by filling it with the given colour. SCNCLR (with no arguments) clears the current text window."
+	},      
     "screen": {
 		"prefix": "screen",
 		"body": [
-			"screen ${1:<number>},${2:<width>},${3:<height>},${4:<color depth>}$0"
+			"screen ${1:<SCREEN NUMBER>}${2:,}${3:<WIDTH>},${4:<HEIGHT>},${5:<COLOUR DEPTH>}$0"
 		],
 		"description": "The version of SCREEN (which has pixel units for width and height) is the easiest way to start a graphics screen. "
 	}, 
     "screenClr": {
-		"prefix": "screen clr",
+		"prefix": "screen",
 		"body": [
-			"screen clr ${1:<color>}$0"
+			"screen clr ${1:<COLOUR>}$0"
 		],
-		"description": "SCREEN CLR colour (or SCNCLR colour) Clears the active graphics screen by filling it with colour. "
+		"description": "SCREEN CLR colour (or SCNCLR colour) clears the active graphics screen by filling it with colour. "
 	}, 
     "screenDef": {
-		"prefix": "screen def",
+		"prefix": "screen",
 		"body": [
-			"screen def ${1:<number>},${2:<width flag>},${3:<height flag>},${4:<color depth>}$0"
+			"screen def ${1:<SCREEN NUMBER>}${2:,}${3:<WIDTH FLAG>},${4:<HEIGHT FLAG>},${5:<COLOUR DEPTH>}$0"
 		],
 		"description": "SCREEN DEF works with predefined resolution parameters for the chosen screen. The width flag and height flag indicate whether high resolution (1) or low resolution (0) is chosen. "
 	},
     "screenSet": {
-		"prefix": "screen set",
+		"prefix": "screen",
 		"body": [
-			"screen set ${1:<number>},${2:<number>}$0"
+			"screen set ${1:<DRAWSCREEN>},${2:<VIEWSCREEN>}$0"
 		],
 		"description": "Sets screen numbers ( 0-3 ) for the drawing and the viewing screen, i.e.,while one screen is being viewed, you can draw on a separate screen and then later flip between them. "
 	}, 	 
 	"screenOpen": {
-		"prefix": "screen open",
+		"prefix": "screen",
 		"body": [
-			"screen open ${1:<number>}$0"
+			"screen open ${1:<SCREEN NUMBER>}$0"
 		],
 		"description": "Allocates resources and initialises the graphics context for the selected screen (0-3). "
 	}, 
 	"screenClose": {
-		"prefix": "screen close",
+		"prefix": "screen",
 		"body": [
-			"screen close ${1:<number>}$0"
+			"screen close ${1:<SCREEN NUMBER>}$0"
 		],
 		"description": "Closes screen (0-3) and frees resources. "
 	}, 		
