@@ -159,13 +159,34 @@
 			"catalog ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
 		],
 		"description": "Prints a file catalog/directory of the specified disk."
-	},											
+	},
+	"char": {
+		"prefix": "char",
+		"body": [
+			"char ${1:<COLUMN>},${2:<ROW>},${3:<HEIGHT>},${4:<WIDTH>},${5:<DIRECTION>},${6:<STRING>}${7:,$${8:<ADDRESS OF CHARACTER SET>}}$0"
+		],
+		"description": "Displays text on a graphic screen. It can be used in all resolutions."
+	},
+	"chardef": {
+		"prefix": "chardef",
+		"body": [
+			"chardef ${1:<CHARACTER NUMBER>},$${2:<BYTE 1>},$${3:<BYTE 2>},$${4:<BYTE 3>},$${5:<BYTE 4>},$${6:<BYTE 5>},$${7:<BYTE 6>},$${8:<BYTE 7>},$${9:<BYTE 8>}$0"
+		],
+		"description": "Change the bitmap matrix of characters"
+	},
+	"chdir": {
+		"prefix": "chdir",
+		"body": [
+			"chdir ${1:<DIRECTORY NAME>}${2:,u${3:<UNIT>}}$0"
+		],
+		"description": "Change to a subdirectory or a parent directory."
+	},															
 	"chr": {
 		"prefix": "chr",
 		"body": [
-			"chr$(${1:<numeric expression>})$0"
+			"chr$(${1:<NUMERIC EXPRESSION})$0"
 		],
-		"description": "CHR$ can be used to convert a number between 0 and 255 into an ASCII character (of string type) and is the inverse function of ASC."
+		"description": "CHR$ can be used to convert a number between 0 and 255 into an PETSCII character (of string type) and is the inverse function of ASC."
 	},
 	"close": {
 		"prefix": "close",
