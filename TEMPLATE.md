@@ -25,35 +25,24 @@ You might follow this process to develop your program:
         \src -> source programs
 
 2. write the program; 
-3. 
-3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Convert and Run" command;
-4. create a d64 image using the "created64.sh" script (see next sections of this README);
-5. use this d64 image with a sd2iec device;
+3. tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
+        
+        petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.src
+
+3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
+4. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
+5. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
 6. run it on the real c64 hardware.
-
-You can create the folder structure using [Yeoman](https://yeoman.io/learning/):
-
-```bash
-npm install -g generator-c64basicv2
-
-mkdir myC64Project
-cd myC64Project
-
-npx yo c64basicv2
-
-```
 
 ## Features
 
 The provided features are:
 
 - Syntax highlighting
-- Snippets for the main commands and control characters
+- Snippets for the all commands and control characters
 - File icons
 - Theme
 - Rulers: 40th and 80th column
-- Tasks: suggested in this README
-- Command: Automatic Proofreader, Convert, Convert and Run
 - Keyboard Shortcuts
 
 ### Syntax highlighting
