@@ -80,7 +80,7 @@ But pay attention: Inside print statement you have to remove the double apex, pr
 
 However, it's important to note that within a print statement, the double quotes must be removed so that "{clr}" becomes {clr}, and then print chr$(147).
 
-![c64basicv2 Control Character Snippet](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/c64basicv2_ctrlcharsnippets.gif)
+![c64basicv2 Control Character Snippet](https://github.com/clockchip/mega65basic/blob/main/images/control_chr.gif)
 
 An alternative option is to use petcat to directly write the following Control characters without needing to convert them to chr$.
 
