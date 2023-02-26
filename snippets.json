@@ -462,14 +462,14 @@
 	"int": {
 		"prefix": "int",
 		"body": [
-			"int(${1:<number>})$0"
+			"int(${1:<NUMERIC EXPRESSION>})$0"
 		],
-		"description": "INT is used to round numbers, whereas rounding is different from its common mathematical definition."
+		"description": "INT returns the integer part of the argument. This function is NOT limited to the typical 16-bit integer range (-32768 to 32767), as it uses real arithmetic."
 	},
 	"left$": {
 		"prefix": "left$",
 		"body": [
-			"left$(${1:<string>},${2:<integer number>})$0"
+			"left$(${1:<STRING>},${2:<AMOUNT OF CHARACTERS>})$0"
 		],
 		"description": "LEFT$ will be used for cutting strings into component parts beginning at the left side until to the indicated integer number."
 	},
