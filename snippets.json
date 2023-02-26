@@ -466,7 +466,7 @@
 	"print": {
 		"prefix": "print",
 		"body": [
-			"print ${1:<expression>}$0"
+			"print ${1:<EXPRESSION>}$0"
 		],
 		"description": "The BASIC command PRINT is used to print data to the current output device, normally the screen."
 	},
