@@ -59,7 +59,12 @@ Snippets suggest to you the syntax of the commands:
 ### Snippets for Control characters
 Control characters in c64 basic are special characters like this:
 
-![c64basicv2 logo](https://github.com/clockchip/mega65basic/blob/main/images/01.png)(https://github.com/clockchip/mega65basic/blob/main/images/02.png)(https://github.com/clockchip/mega65basic/blob/main/images/03.png)(https://github.com/clockchip/mega65basic/blob/main/images/04.png)(https://github.com/clockchip/mega65basic/blob/main/images/05.png)(https://github.com/clockchip/mega65basic/blob/main/images/06.png)
+![Clears screen](https://github.com/clockchip/mega65basic/blob/main/images/01.png)
+![Place cursor in top left corner](https://github.com/clockchip/mega65basic/blob/main/images/02.png)
+![Cursor one step right](https://github.com/clockchip/mega65basic/blob/main/images/03.png)
+![Cursor one step to the left](https://github.com/clockchip/mega65basic/blob/main/images/04.png)
+![Cursor one position down](https://github.com/clockchip/mega65basic/blob/main/images/05.png)
+![Cursor one position up](https://github.com/clockchip/mega65basic/blob/main/images/06.png)
 
 Books and old magazines represent special characters using this syntax: {ctrl character name}. For example, the previous character is written with this syntax: {clr}.
 
