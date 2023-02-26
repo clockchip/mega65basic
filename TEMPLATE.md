@@ -54,7 +54,9 @@ An example of syntax highlighting is:
 
 Snippets suggest to you the syntax of the commands:
 
-![c64basicv2 Snippets](https://github.com/clockchip/mega65basic/blob/main/images/syntax_high.gif)
+![REM Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets1.gif)
+
+![Command Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets2.gif)
 
 ### Snippets for Control characters
 Special characters in MEGA65 BASIC are referred to as control characters, such as:
