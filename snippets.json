@@ -424,24 +424,38 @@
 		],
 		"description": "Returns a four character hexadecimal representation of the argument."
 	},			
-	"if": {
+	"ifThen": {
 		"prefix": "if",
 		"body": [
-			"if ${1:<condition>} ${2|then,goto|} ${3:<line or espression>}$0"
+			"if ${1:<EXPRESSION>} then ${2:<TRUE CLAUSE>}${3: : ELSE ${4:<FALSE CLAUSE>}}$0"
+		],
+		"description": "The BASIC command IF is used to test a condition."
+	},
+	"ifGoto": {
+		"prefix": "if",
+		"body": [
+			"if ${1:<EXPRESSION>} goto ${2:<LINE NUMBER>}${3: : ELSE ${4:<FALSE CLAUSE>}}$0"
 		],
 		"description": "The BASIC command IF is used to test a condition."
 	},
 	"input": {
 		"prefix": "input",
 		"body": [
-			"input ${1:<string>};${2:<variable>}$0"
+			"input ${1:<STRING>};${2:<VARIABLE>}$0"
 		],
 		"description": "The BASIC command INPUT is used to read data from the keyboard into one or more supplied variables."
 	},
+	"inputList": {
+		"prefix": "input",
+		"body": [
+			"input ${1:<STRING>};${2:<VARIABLE>},${3:<VARIABLE>}$0"
+		],
+		"description": "The BASIC command INPUT is used to read data from the keyboard into one or more supplied variables."
+	},	
 	"input#": {
 		"prefix": "input#",
 		"body": [
-			"input#${1:<logic file number>},${2:<variable>}$0"
+			"input#${1:<CHANNEL NUMBER>},${2:<VARIABLE>}$0"
 		],
 		"description": "The BASIC command INPUT# is used for reading data from a file stored on peripheral device media such as disk or tape."
 	},
