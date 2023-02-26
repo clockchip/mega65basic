@@ -5,7 +5,7 @@
 This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
 
 This extension is developed using the code and tools available in the following GitHub repositories:
-- [Yo Code- Extension and Customization Generartor](https://github.com/microsoft/vscode-generator-code)
+- [Yo Code - Extension and Customization Generator](https://github.com/microsoft/vscode-generator-code)
 - [c64basicv2 Visual Studio Code Extension](https://github.com/gverduci/c64basicv2)
 
 Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
