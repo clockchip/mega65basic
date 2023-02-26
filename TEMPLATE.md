@@ -57,7 +57,7 @@ Snippets suggest to you the syntax of the commands:
 ![c64basicv2 Snippets](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/c64basicv2_snippets.gif)
 
 ### Snippets for Control characters
-Control characters in c64 basic are special characters like this:
+Special characters in MEGA65 BASIC are referred to as control characters, such as:
 
 ![Clears screen](https://github.com/clockchip/mega65basic/blob/main/images/01.png)
 ![Place cursor in top left corner](https://github.com/clockchip/mega65basic/blob/main/images/02.png)
@@ -66,19 +66,21 @@ Control characters in c64 basic are special characters like this:
 ![Cursor one position down](https://github.com/clockchip/mega65basic/blob/main/images/05.png)
 ![Cursor one position up](https://github.com/clockchip/mega65basic/blob/main/images/06.png)
 
-Books and old magazines represent special characters using this syntax: {ctrl character name}. For example, the previous character is written with this syntax: {clr}.
+Books and old magazines use a specific syntax to represent special characters, which involves enclosing the name of the control character in curly braces. For instance, the control character that clears the screen is represented as {clr}.
 
-If you use this control character in a print statement (print "{clr}"), c64 clears the screen.
+When you include such a control character in a print statement (for example, print "{clr}"), it causes the MEGA65 to clear the screen.
 
-You can find the list of control characters on this page: [Control character](https://www.c64-wiki.com/wiki/control_character).
+A comprehensive list of control characters can be found on this page: [Control character](https://www.c64-wiki.com/wiki/control_character).
 
-Snippets for Control character transform string like {clr} to the correspondig command chr$(xxx). In our example: chr$(147).
+Snippets of code for transforming the control character strings (e.g., {clr}) into the corresponding command (chr$(xxx)) are available. For example, {clr} can be transformed into chr$(147).
 
 But pay attention: Inside print statement you have to remove the double apex, print "{clr}" become print {clr} and then print chr$(147).
 
+However, it's important to note that within a print statement, the double quotes must be removed so that "{clr}" becomes {clr}, and then print chr$(147).
+
 ![c64basicv2 Control Character Snippet](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/c64basicv2_ctrlcharsnippets.gif)
 
-There is another option: using *petcat* you can write directly the following Control characters without conversion to chr$:
+An alternative option is to use petcat to directly write the following Control characters without needing to convert them to chr$.
 
 {clear}             {home}              {right}         {left}              {up}                {down}
 {reverse on}        {reverse off}       {black}         {white}             {red}               {cyan}
