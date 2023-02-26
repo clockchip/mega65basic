@@ -357,24 +357,38 @@
 	"fre": {
 		"prefix": "fre",
 		"body": [
-			"fre(${1:<dummy argument>})$0"
+			"fre(${1:<BANK NUMBER>})$0"
 		],
-		"description": "FRE first performs a garbage collection to free up unused string memory."
+		"description": "Returns the number of free bytes for banks 0 or 1, or the ROM version if the argument is negative."
 	},
 	"get": {
 		"prefix": "get",
 		"body": [
-			"get ${1:<variable>}$0"
+			"get ${1:<VARIABLE>}$0"
 		],
 		"description": "The BASIC command GET reads one or more chars from the keyboard cache into a variable (string, floating point or integer) and can only be used in a BASIC program."
 	},
 	"get#": {
 		"prefix": "get#",
 		"body": [
-			"get#${1:<logic file number>},${2:<variable>}$0"
+			"get#${1:<CHANNEL NUMBER>},${2:<VARIABLE>}$0"
 		],
-		"description": "The BASIC command GET# reads single characters from the specified device or the opened file. "
+		"description": "The BASIC command GET# reads a single byte from the channel argument and assigns single character strings to string variables, or an 8-bit binary value to numeric variables. "
 	},
+	"getkey": {
+		"prefix": "getkey",
+		"body": [
+			"getkey ${1:<VARIABLE>}$0"
+		],
+		"description": "The BASIC command GETKEY gets the next character (or byte value of the next character) from the keyboard queue. If the queue is empty, the program will wait until a key has been pressed."
+	},	
+	"go64": {
+		"prefix": "go64",
+		"body": [
+			"go64"
+		],
+		"description": "The BASIC command GO64 Switches the MEGA65 to C64 compatible mode."
+	},	
 	"gosub": {
 		"prefix": "gosub",
 		"body": [
