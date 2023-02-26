@@ -87,7 +87,7 @@
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|color|foreground|scnclr|screen|palette)"
+				"match": "(background|border|bump|color|foreground|graphic|scnclr|screen|palette)"
 			}]
 		},
 		"control": {
