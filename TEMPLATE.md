@@ -1,11 +1,11 @@
-![c64basicv2 logo](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/c64basicv2_logo.png)
+![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
 
-# **** COMMODORE 64 BASIC V2 **** (c64basicv2) Visual Studio Code Extension
+# **** MEGA65 Basic Language **** (mega65basic) Visual Studio Code Extension
 
-This extension helps you to write *Commodore 64 basic v2* programs (.prg or .bas extension). It provides you: syntax highlighting, snippets, file icons, a theme, tasks, rulers and commands.
+This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, tasks, rulers, and commands.
 
-Rules for snippets come from the following pages of C64-Wiki:
-- [BASIC](https://www.c64-wiki.com/wiki/BASIC#Overview_of_BASIC_Version_2.0_.28second_release.29_Commands) 
+Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
+- [Mega65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
 
 You might follow this process to develop your program:
