@@ -27,9 +27,12 @@ You might follow this process to develop your program:
 2. write the program; 
 3. tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
         
-        petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.src
+        petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
 
 3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
+
+![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
+
 4. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
 5. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
 6. run it on the real c64 hardware.
