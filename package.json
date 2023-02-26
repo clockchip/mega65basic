@@ -34,12 +34,17 @@
           "label": "Light (Visual Studio - mega65basic)",
           "uiTheme": "vs",
           "path": "./themes/mega65basic_light_vs.json"
-      }],    
+      }
+    ],    
     "languages": [{
       "id": "mega65basic",
       "aliases": ["Mega65 Basic", "mega65basic"],
       "extensions": [".bas",".prg"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+       "light": "./icons/mega65_light.png",
+        "dark": "./icons/mega65_dark.png"       
+      }
     }],
     "grammars": [{
       "language": "mega65basic",

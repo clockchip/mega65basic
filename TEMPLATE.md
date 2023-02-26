@@ -2,11 +2,20 @@
 
 # **** MEGA65 Basic Language **** (mega65basic) Visual Studio Code Extension
 
-This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, tasks, rulers, and commands.
+This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
+
+This extension is developed using the code and tools available in the following GitHub repositories:
+- [Yo Code- Extension and Customization Generartor](https://github.com/microsoft/vscode-generator-code)
+- [c64basicv2 Visual Studio Code Extension](https://github.com/gverduci/c64basicv2)
 
 Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
 - [Mega65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
+
+To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
+- [petcat tool from VICE Emulator](https://vice-emu.sourceforge.io/)
+- [Xemu](https://github.lgb.hu/xemu/)
+- [Mega65 Tools](https://github.com/MEGA65/mega65-tools)
 
 You might follow this process to develop your program:
 1. create a folder structure like this:
@@ -15,8 +24,9 @@ You might follow this process to develop your program:
         \bin -> converted programs
         \src -> source programs
 
-2. write the program;
-3. test it with [Vice](https://vice-emu.sourceforge.io/) using the "Convert and Run" command;
+2. write the program; 
+3. 
+3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Convert and Run" command;
 4. create a d64 image using the "created64.sh" script (see next sections of this README);
 5. use this d64 image with a sd2iec device;
 6. run it on the real c64 hardware.
