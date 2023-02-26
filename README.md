@@ -1,7 +1,6 @@
 ![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
 
-# **** MEGA65 Basic Language **** (mega65basic) 
-# Visual Studio Code Extension
+# MEGA65 BASIC Language VSCode Extension
 
 This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
 
