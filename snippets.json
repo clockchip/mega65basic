@@ -289,38 +289,63 @@
 	"dim": {
 		"prefix": "dim",
 		"body": [
-			"dim ${1:<variable>}(${2:<d1>})$0"
+			"dim ${1:<VARIABLE>}(${2:<LIMITS>})$0"
 			
 		],
-		"description": "The BASIC command DIM allocates space in array memory for a new array"
+		"description": "The BASIC command DIM declares the shape, bounds and the type of a BASIC array. An array can have one or more dimensions."
 	},
 	"dot": {
 		"prefix": "dot",
 		"body": [
-			"dot ${1:<x pos>},${2:<y pos>}${3:<color>}$0"			
+			"dot ${1:<X POS>},${2:<Y POS>}${3:,${4:<COLOUR>}}$0"			
 		],
 		"description": "Draws a pixel at screen coordinates x and y. The optional third parameter defines the colour to be used. If not specified, the current pen colour will be used."
 	},
 	"exp": {
 		"prefix": "exp",
 		"body": [
-			"exp(${1:<number>})$0"
+			"exp(${1:<NUMERIC EXPRESSION>})$0"
 		],
-		"description": "EXP is a mathematical function that evaluates the inverse natural LOG of the argument."
+		"description": "The EXP (EXPonential function) computes the value of the mathematical constant Euler’s number (2.71828183) raised to the power of the argument."
 	},
 	"fn":{
 		"prefix": "fn",
 		"body": [
-			"fn ${1:<function name>}(${2:<number>})$0"
+			"fn ${1:<FUNCTION NAME}(${2:<NUMERIC EXPRESSION>})$0"
 		],
 		"description":"The BASIC command FN executes a function which has been defined previously in the course of the program with the BASIC-command DEF."
 	},
 	"for": {
 		"prefix": "for",
 		"body": [
-			"for ${1:<counter variable>}=${2:<start value>} to ${3:<end value>}:${4:<expression>}:next ${1:<counter variable>}$0"
+			"for ${1:<COUNTER VARIABLE>}=${2:<START VALUE>} to ${3:<TO END VALUE>}:${4:<EXPRESSION>}:next ${1:<COUNTER VARIABLE>}$0"
 		],
 		"description": "The BASIC command FOR is the start command of a FOR…TO…NEXT loop."
+	},
+	"forStep": {
+		"prefix": "for",
+		"body": [
+			"for ${1:<COUNTER VARIABLE>}=${2:<START VALUE>} to ${3:<END VALUE>} step ${4:<STEPSIZE>}:${5:<EXPRESSION>}:next ${1:<COUNTER VARIABLE>}$0"
+		],
+		"description": "The BASIC command FOR is the start command of a FOR…TO…STEP…NEXT loop."
+	},	
+	"forMulti": {
+		"prefix": "for",
+		"body": [
+			"for ${1:<COUNTER VARIABLE>}=${2:<START VALUE>} to ${3:<TO END VALUE>}",
+			"${4:<EXPRESSION>}",
+			"next ${1:<COUNTER VARIABLE>}$0"
+		],
+		"description": "The BASIC command FOR is the start command of a FOR…TO…NEXT loop."
+	},		
+	"forMultiStep": {
+		"prefix": "for",
+		"body": [
+			"for ${1:<COUNTER VARIABLE>}=${2:<START VALUE>} to ${3:<END VALUE>} step ${4:<STEPSIZE>}",
+			"${5:<EXPRESSION>}",
+			"next ${1:<COUNTER VARIABLE>}$0"
+		],
+		"description": "The BASIC command FOR is the start command of a FOR…TO…STEP…NEXT loop."
 	},
 	"foreground": {
 		"prefix": "foreground",
@@ -329,13 +354,6 @@
 		],
 		"description": "Sets the foreground colour (text colour) of the screen to the argument, which must be in the range of 0 to 31."
 	},	
-	"fors": {
-		"prefix": "fors",
-		"body": [
-			"for ${1:<counter variable>}=${2:<start value>} to ${3:<end value>} step ${4:<stepsize>}:$(5:<expression>):next ${1:<counter variable>}$0"
-		],
-		"description": "The BASIC command FOR is the start command of a FOR…TO…STEP…NEXT loop."
-	},
 	"fre": {
 		"prefix": "fre",
 		"body": [
