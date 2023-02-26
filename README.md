@@ -1,65 +1,98 @@
-# mega65basic README
+![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
 
-This is the README for your extension "mega65basic". After writing up a brief description, we recommend including the following sections.
+# **** MEGA65 Basic Language **** (mega65basic) Visual Studio Code Extension
+
+This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
+
+This extension is developed using the code and tools available in the following GitHub repositories:
+- [Yo Code- Extension and Customization Generartor](https://github.com/microsoft/vscode-generator-code)
+- [c64basicv2 Visual Studio Code Extension](https://github.com/gverduci/c64basicv2)
+
+Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
+- [Mega65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
+- [Control character](https://www.c64-wiki.com/wiki/control_character) 
+
+To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
+- [petcat tool from VICE Emulator](https://vice-emu.sourceforge.io/)
+- [Xemu](https://github.lgb.hu/xemu/)
+- [Mega65 Tools](https://github.com/MEGA65/mega65-tools)
+
+You might follow this process to develop your program:
+1. create a folder structure like this:
+
+        \    -> root dir
+        \bin -> converted programs
+        \src -> source programs
+
+2. write the program; 
+3. tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
+        
+        petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.src
+
+3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
+4. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
+5. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
+6. run it on the real c64 hardware.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The provided features are:
 
-For example if there is an image subfolder under your extension project workspace:
+- Syntax highlighting
+- Snippets for the all commands and control characters
+- File icons
+- Theme
+- Rulers: 40th and 80th column
+- Keyboard Shortcuts
 
-\!\[feature X\]\(images/feature-x.png\)
+### Syntax highlighting
+An example of syntax highlighting is:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![mega65basic highlighting](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_syntaxhigh.png)
 
-## Requirements
+### Snippets
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Snippets suggest to you the syntax of the commands:
 
-## Extension Settings
+![REM Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets1.gif)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![Command Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets2.gif)
 
-For example:
+### Snippets for Control characters
+Special characters in MEGA65 BASIC are referred to as control characters, such as:
 
-This extension contributes the following settings:
+![Clears screen](https://github.com/clockchip/mega65basic/blob/main/images/01.png)
+![Place cursor in top left corner](https://github.com/clockchip/mega65basic/blob/main/images/02.png)
+![Cursor one step right](https://github.com/clockchip/mega65basic/blob/main/images/03.png)
+![Cursor one step to the left](https://github.com/clockchip/mega65basic/blob/main/images/04.png)
+![Cursor one position down](https://github.com/clockchip/mega65basic/blob/main/images/05.png)
+![Cursor one position up](https://github.com/clockchip/mega65basic/blob/main/images/06.png)
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Books and old magazines use a specific syntax to represent special characters, which involves enclosing the name of the control character in curly braces. For instance, the control character that clears the screen is represented as {clr}.
 
-## Known Issues
+When you include such a control character in a print statement (for example, print "{clr}"), it causes the MEGA65 to clear the screen.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+A comprehensive list of control characters can be found on this page: [Control character](https://www.c64-wiki.com/wiki/control_character).
+
+Snippets of code for transforming the control character strings (e.g., {clr}) into the corresponding command (chr$(xxx)) are available. For example, {clr} can be transformed into chr$(147).
+
+But pay attention: Inside print statement you have to remove the double apex, print "{clr}" become print {clr} and then print chr$(147).
+
+However, it's important to note that within a print statement, the double quotes must be removed so that "{clr}" becomes {clr}, and then print chr$(147).
+
+![c64basicv2 Control Character Snippet](https://github.com/clockchip/mega65basic/blob/main/images/control_chr.gif)
+
+An alternative option is to use petcat to directly write the following Control characters without needing to convert them to chr$.
+
+{clear}             {home}              {right}         {left}              {up}                {down}
+{reverse on}        {reverse off}       {black}         {white}             {red}               {cyan}
+{purple}            {green}             {blue}          {yellow}            {orange}            {brown}
+{pink}              {dark gray}         {gray}          {light green}       {light blue}        {light gray}
+{f1}                {f2}                {f3}            {f4}                {f5}                {f6}
+{f7}                {f8}                {space}         {pi}
+
+[petcat src](https://github.com/svn2github/vice-emu/blob/524c58c4c2159dbe82520d36b7dde6a082eeddf7/vice/src/petcat.c#L683)
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[CHANGELOG.md](./CHANGELOG.md)
