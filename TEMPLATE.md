@@ -59,7 +59,7 @@ Snippets suggest to you the syntax of the commands:
 ### Snippets for Control characters
 Control characters in c64 basic are special characters like this:
 
-![c64basicv2 logo](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/clrCtrlChar.png)
+![c64basicv2 logo](https://github.com/clockchip/mega65basic/blob/main/images/01.png)(https://github.com/clockchip/mega65basic/blob/main/images/02.png)(https://github.com/clockchip/mega65basic/blob/main/images/03.png)(https://github.com/clockchip/mega65basic/blob/main/images/04.png)(https://github.com/clockchip/mega65basic/blob/main/images/05.png)(https://github.com/clockchip/mega65basic/blob/main/images/06.png)
 
 Books and old magazines represent special characters using this syntax: {ctrl character name}. For example, the previous character is written with this syntax: {clr}.
 
