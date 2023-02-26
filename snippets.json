@@ -392,17 +392,38 @@
 	"gosub": {
 		"prefix": "gosub",
 		"body": [
-			"gosub ${1:<line>}$0"
+			"gosub ${1:<LINE NUMBER>}$0"
 		],
-		"description": "GOSUB is a specialized form of the GOTO statement, with one important difference: GOSUB remembers where it came from. "
+		"description": "GOSUB is a specialized form of the GOTO statement, with one important difference: GOSUB remembers where it came from."
 	},
 	"goto": {
 		"prefix": "goto",
 		"body": [
-			"goto ${1:<line>}$0"
+			"goto ${1:<LINE NUMBER>}$0"
 		],
-		"description": "The word GOTO followed by a number will make the program jump to the line with that number. "
+		"description": "The word GOTO followed by a number will make the program jump to the line with that number."
 	},
+	"graphic": {
+		"prefix": "graphic",
+		"body": [
+			"graphic clr"
+		],
+		"description": "Initialises the BASIC graphic system. It clears the graphics memory and screen, and sets all parameters of the graphics context to their default values."
+	},
+	"help": {
+		"prefix": "help",
+		"body": [
+			"help"
+		],
+		"description": "When the BASIC program stops due to an error, HELP can be used to gain further information."
+	},
+	"hex$": {
+		"prefix": "hex$",
+		"body": [
+			"hex$(${1:<NUMERIC EXPRESSION>})$0"
+		],
+		"description": "Returns a four character hexadecimal representation of the argument."
+	},			
 	"if": {
 		"prefix": "if",
 		"body": [

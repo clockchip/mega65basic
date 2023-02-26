@@ -75,7 +75,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|go64|setbit|set|sys|disk|def|verify)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|go64|help|setbit|set|sys|disk|def|verify)"
 			}]	
 		},		
 		"draw": {
@@ -87,7 +87,7 @@
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|color|collision|foreground|graphic|scnclr|screen|palette)"
+				"match": "(background|border|bump|color|collision|foreground|graphic clr|graphic|scnclr|screen|palette)"
 			}]
 		},
 		"control": {
@@ -99,7 +99,7 @@
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|exp|fre|getkey|get|get#|input|input#|int|len|let|line|list|load|log|new|next|on|open|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|usr|val|wait)"
+		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|exp|fre|getkey|get|get#|hex$|input|input#|int|len|let|line|list|load|log|new|next|on|open|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|usr|val|wait)"
 			}]
 		},
 		"otherString": {
