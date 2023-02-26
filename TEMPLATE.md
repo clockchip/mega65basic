@@ -48,7 +48,7 @@ The provided features are:
 ### Syntax highlighting
 An example of syntax highlighting is:
 
-![c64basicv2 highlighting](https://raw.githubusercontent.com/gverduci/c64basicv2/main/images/c64basicv2_syntaxhighlighting.png)
+![mega65basic highlighting](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_syntaxhigh.png)
 
 ### Snippets
 
