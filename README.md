@@ -9,13 +9,13 @@ This extension is developed using the code and tools available in the following 
 - [c64basicv2 Visual Studio Code Extension](https://github.com/gverduci/c64basicv2)
 
 Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
-- [Mega65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
+- [MEGA65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
 
 To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
 - [petcat tool from VICE Emulator](https://vice-emu.sourceforge.io/)
 - [Xemu](https://github.lgb.hu/xemu/)
-- [Mega65 Tools](https://github.com/MEGA65/mega65-tools)
+- [MEGA65 Tools](https://github.com/MEGA65/mega65-tools)
 
 You might follow this process to develop your program:
 1. create a folder structure like this:
@@ -29,13 +29,13 @@ You might follow this process to develop your program:
         
         petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
 
-3. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
+4. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
 
 ![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
 
-4. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
-5. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
-6. run it on the real c64 hardware.
+5. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
+6. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
+7. run it on the real MEGA65 hardware.
 
 ## Features
 
