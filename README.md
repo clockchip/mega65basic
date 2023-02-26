@@ -2,7 +2,7 @@
 
 # MEGA65 BASIC Language VSCode Extension
 
-This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within Visual Studio Code. It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
+This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within [Visual Studio Code](https://code.visualstudio.com/). It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
 
 This extension is developed using the code and tools available in the following GitHub repositories:
 - [Yo Code - Extension and Customization Generator](https://github.com/microsoft/vscode-generator-code)
