@@ -188,12 +188,19 @@
 		],
 		"description": "CHR$ can be used to convert a number between 0 and 255 into an PETSCII character (of string type) and is the inverse function of ASC."
 	},
+	"circle": {
+		"prefix": "circle",
+		"body": [
+			"circle ${1:<X COORDINATE>},${2:<Y COORDINATE>},${3:<RADIUS>}${4:,${5:<FLAGS>},${6:<START ANGLE>},${7:<STOP ANGLE>}}$0"
+		],
+		"description": "A special case of ELLIPSE, using the same value for horizontal and vertical radius."
+	},	
 	"close": {
 		"prefix": "close",
 		"body": [
-			"close ${1:<logical file number>}$0"
+			"close ${1:<CHANNEL NUMBER>}$0"
 		],
-		"description": "The BASIC command CLOSE is used for closing currently opened files or drive numbers."
+		"description": "The BASIC command CLOSE closes an input or output channel."
 	},
 	"clr": {
 		"prefix": "clr",
@@ -212,10 +219,24 @@
 	"cmd": {
 		"prefix": "cmd",
 		"body": [
-			"cmd ${1:<logical file number>},${2:<expression>}$0"
+			"cmd ${1:<CHANNEL>}${2:,${3:<EXPRESSION>}}$0"
 		],
-		"description": "The BASIC command CMD changes the data output from the screen to another peripheral device like datasette, modem, printer or disk drive. "
+		"description": "The BASIC command CMD changes the data output from the screen to another peripheral device like datasette, modem, printer or disk drive."
 	},
+	"collect": {
+		"prefix": "collect",
+		"body": [
+			"collect ${1:,d${2:<DRIVE>}}${3:,u${4:<UNIT>}}$0"
+		],
+		"description": "The BASIC command COLLECT rebuilds the BAM (Block Availability Map) of a disk, deleting splat files (files which have been opened, but not properly closed) and marking unused blocks as free."
+	},
+	"collision": {
+		"prefix": "collision",
+		"body": [
+			"collision ${1:<TYPE>}${2:,${3:<LINE NUMBER>}}$0"
+		],
+		"description": "Enables or disables a user-programmed interrupt handler. A call without the line number argument disables the handler, while a call with line number enables it. "
+	},		
 	"color": {
 		"prefix": "color",
 		"body": [
@@ -223,25 +244,45 @@
 		],
 		"description": "The command works in the same way as FOREGROUND, i.e: sets the foreground colour (text colour) of the screen to the colour argument, which must be in the range of 0 to 31."
 	},	
+	"concat": {
+		"prefix": "concat",
+		"body": [
+			"concat ${1:<APPENDFILE>}${2:,d${3:<DRIVE>}} to ${4:<TARGETFILE>}${5:,u${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
+		],
+		"description": "CONCAT appends the contents of appendfile to the targetfile. Afterwards, targetfile contains the contents of both files, while appendfile remains unchanged."
+	},
+	"cont": {
+		"prefix": "cont",
+		"body": [
+			"cont"
+		],
+		"description": "Used to resume program execution after a break or stop caused by an END or STOP statement, or by pressing RUN STOP."
+	},
+	"copy": {
+		"prefix": "copy",
+		"body": [
+			"copy ${1:<SOURCE>}${2:,d${3:<DRIVE>}} to ${4:<TARGET>}${5:,u${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
+		],
+		"description": "Copies the contents of source to target. It is used to copy either single files or, by using wildcard characters, multiple files."
+	},				
 	"cos": {
 		"prefix": "cos",
 		"body": [
-			"cos(${1:<numeric expression>})$0"
+			"cos(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "The numeric function COS is a mathematical function which evaluates to the cosine for a given angle, a number considered to be in radians."
 	},
 	"data": {
 		"prefix": "data",
 		"body": [
-			"data ${1:<constant>},${2:<constant>},${3:<constant>},${4:<constant>},${5:<constant>},${6:<constant>},${7:<constant>},${8:<constant>}$0"
+			"data ${1:<CONSTANT>},${2:<CONSTANT>},${3:<CONSTANT>},${4:<CONSTANT>},${5:<CONSTANT>},${6:<CONSTANT>},${7:<CONSTANT>},${8:<CONSTANT>}$0"
 		],
 		"description": "The BASIC-Command DATA is used to store constant information in the program code, and is used with the BASIC-command READ. "
 	},
 	"def":{
 		"prefix": "def",
 		"body": [
-			"def fn ${1:<function name>}(${2:<parameter name>})=${3:<mathematical expression>}",
-			"$0"
+			"def fn ${1:<FUNCTION NAME>}(${2:<PARAMETER NAME>})=${3:<MATHEMATICAL EXPRESSION>}$0"
 		],
 		"description":"The BASIC-command DEF defines a function with exactly one single numeric argument which can be executed with FN afterwards."
 	},
