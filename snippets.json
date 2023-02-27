@@ -376,7 +376,7 @@
 		"prefix": "do",
 		"body": [
 			"do ${1:${2|until,while|} ${3:<LOGICAL EXPRESSION>}}",
-			"${4:<EXPRESSION>} ${5|exit|}",
+			"${4:<EXPRESSION>} ${5:exit}",
 			"loop ${6:${7|until,while|} ${8:<LOGICAL EXPRESSION>}}$0"			
 		],
 		"description": "DO and LOOP define the start of a BASIC loop. Using DO and LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
@@ -563,17 +563,38 @@
 	"len": {
 		"prefix": "len",
 		"body": [
-			"len(${1:<string>})$0"
+			"len(${1:<STRING>})$0"
 		],
 		"description": "The function LEN returns the number of characters in a string. "
 	},
 	"let": {
 		"prefix": "let",
 		"body": [
-			"let ${1:<variable>}=${2:expression}$0"
+			"let ${1:<VARIABLE>}=${2:<EXPRESSION>}$0"
 		],
-		"description": "The BASIC-Command LET will be used for assign numerical values or chars in the right type of variable."
+		"description": "The BASIC-Command LET assigns values (or results of expressions) to variables."
 	},
+	"line": {
+		"prefix": "line",
+		"body": [
+			"line ${1:<X BEGIN>},${2:<Y BEGIN>}${3:,${4:<X NEXT>},${5:<Y NEXT>}}$0"
+		],
+		"description": "Draws a pixel at (X BEGIN/Y BEGIN), if only one coordinate pair is given. If more than one pair is defined, a line is drawn on the current graphics screen from the coordinate to the next coordinate pair(s)."
+	},	
+	"listFile": {
+		"prefix": "list",
+		"body": [
+			"list ${1|p |}${2:<FILENAME>}${3:,u${4:<UNIT>}}$0"
+		],
+		"description": "Used to list a BASIC program directly from unit, which by default is 8."
+	},	
+	"list": {
+		"prefix": "list",
+		"body": [
+			"list ${1|p |}${2:<LINE RANGE>}$0"
+		],
+		"description": "Used to list a range of lines from the BASIC program. The line range consists of the first and/or last line to list, or a single line number."
+	},	
 	"load": {
 		"prefix": "load",
 		"body": [
@@ -833,31 +854,66 @@
 	"sqr": {
 		"prefix": "sqr",
 		"body": [
-			"sqr(${1:<number>})$0"
+			"sqr(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "The numeric function SQR is a mathemathical function for square root of a number."
 	},
+	"st": {
+		"prefix": "st",
+		"body": [
+			"st"
+		],
+		"description": "ST holds the status of the last I/O operation. If ST is zero, there was no error, otherwise it is set to a device dependent error code."
+	},
+	"stop": {
+		"prefix": "stop",
+		"body": [
+			"stop"
+		],
+		"description": "Stops the execution of the BASIC program. A message will be displayed showing the line number where the program stopped."
+	},		
 	"str$": {
 		"prefix": "str$",
 		"body": [
-			"str$(${1:<number>})$0"
+			"str$(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "STR$ is used to converting numerical values or variables into a string."
+	},
+	"sys": {
+		"prefix": "sys",
+		"body": [
+			"sys ${1:<MEMORY ADDRESS>}${2:,${3:<A REG>},${4:<X REG>},${5:<Y REG>},${6:<Z REG>},${7:<S REG>}}$0"
+		],
+		"description": "Calls a machine language subroutine. This can be a ROM-resident kernal routine or any other routine which has previously been loaded or POKEd to RAM."
 	},
 	"tab": {
 		"prefix": "tab",
 		"body": [
-			"tab(${1:<integer>})$0"
+			"tab(${1:<COLUMN>})$0"
 		],
-		"description": "With the output function TAB the cursor position is set to logical screen column for use in BASIC output commands like PRINT."
+		"description": "Positions the cursor at column."
 	},
 	"tan": {
 		"prefix": "tan",
 		"body": [
-			"tan(${1:<number>})$0"
+			"tan(${1:<NUMERIC EXPRESSION>})$0"
 		],
-		"description": "The numerical function TAN is a mathematical function which evaluates to the tangent for a given angle, a number regarded as being in radians."
+		"description": "The numerical function TAN returns the tangent of the argument. The argument is expected in units of radians. The result is in the range (-1.0 to +1.0)"
 	},
+	"ti": {
+		"prefix": "ti",
+		"body": [
+			"ti$"
+		],
+		"description": "TI is a high precision timer with a resolution of 1 micro second. It is started or reset with CLR TI, and can be accessed in the same way as any other variable in expressions."
+	},
+	"ti$": {
+		"prefix": "ti",
+		"body": [
+			"ti$"
+		],
+		"description": "TI$ stores the time information of the RTC (Real-Time Clock) in text form, using the format: ”hh:mm:ss”. It is updated with every use."
+	},			
 	"usr": {
 		"prefix": "usr",
 		"body": [

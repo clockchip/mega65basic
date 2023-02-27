@@ -16,13 +16,13 @@
 		},			
 		{
 			"include": "#draw"
-		},							
+		},
+		{
+			"include": "#otherString"
+		},									
 		{
 			"include": "#other"
 		},		
-		{
-			"include": "#otherString"
-		},
 		{
 			"include": "#strings"
 		},
