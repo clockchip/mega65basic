@@ -292,7 +292,14 @@
 			"dclose u${1:<UNIT>}$0"
 		],
 		"description":"Closes a single file or all files for the specified unit. DCLOSE is used either with a channel argument or a unit number, but never both."
-	},					
+	},
+	"dec":{
+		"prefix": "dec",
+		"body": [
+			"dec(${1:<STRING EXPRESSION>})$0"
+		],
+		"description":"Returns the decimal value of the argument, that is written as a hex string."
+	},						
 	"def":{
 		"prefix": "def",
 		"body": [
@@ -300,13 +307,79 @@
 		],
 		"description":"The BASIC-command DEF defines a function with exactly one single numeric argument which can be executed with FN afterwards."
 	},
+	"deleteLine": {
+		"prefix": "delete",
+		"body": [
+			"delete ${1:<LINE RANGE>}$0"		
+		],
+		"description": "The BASIC command DELETE is also used to delete a range of lines from the BASIC program."
+	},
+	"deleteFile": {
+		"prefix": "delete",
+		"body": [
+			"delete ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}${6:,r}$0"
+		],
+		"description": "The BASIC command DELETE is also used to delete files from disk."
+	},
+	"dir": {
+		"prefix": "dir",
+		"body": [
+			"dir ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+		],
+		"description": "Prints a file directory/catalog of the specified disk."
+	},
+	"directory": {
+		"prefix": "directory",
+		"body": [
+			"directory ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+		],
+		"description": "Prints a file directory/catalog of the specified disk."
+	},
+	"disk": {
+		"prefix": "disk",
+		"body": [
+			"disk ${1:<COMMAND STRING>}${2:,u${3:<UNIT>}}$0"			
+		],
+		"description": "Sends a command string to the specified disk unit."
+	},
+	"dload": {
+		"prefix": "dload",
+		"body": [
+			"dload ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"			
+		],
+		"description": "The first form loads a file of type PRG into memory reserved for BASIC programs."
+	},
+	"dmode": {
+		"prefix": "dmode",
+		"body": [
+			"dmode ${1:<JAM>},${2:<COMPLIMENT>},${3:<STENCIL>},${4:<STYLE>},${5:<THICK>}$0"			
+		],
+		"description": "The BASIC command DMOD (Display MODE) sets several parameters of the graphics context, which is used by drawing commands."
+	},							
 	"dim": {
 		"prefix": "dim",
 		"body": [
-			"dim ${1:<VARIABLE>}(${2:<LIMITS>})$0"
-			
+			"dim ${1:<VARIABLE>}(${2:<LIMITS>})$0"			
 		],
 		"description": "The BASIC command DIM declares the shape, bounds and the type of a BASIC array. An array can have one or more dimensions."
+	},
+	"do": {
+		"prefix": "do",
+		"body": [
+			"do",
+			"${1:<EXPRESSION>}",
+			"loop$0"			
+		],
+		"description": "DO and LOOP define the start of a BASIC loop. Using DO and LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
+	},
+	"doAdv": {
+		"prefix": "do",
+		"body": [
+			"do ${1:${2|until,while|} ${3:<LOGICAL EXPRESSION>}}",
+			"${4:<EXPRESSION>} ${5|exit|}",
+			"loop ${6:${7|until,while|} ${8:<LOGICAL EXPRESSION>}}$0"			
+		],
+		"description": "DO and LOOP define the start of a BASIC loop. Using DO and LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
 	},
 	"dot": {
 		"prefix": "dot",
@@ -325,7 +398,7 @@
 	"fn":{
 		"prefix": "fn",
 		"body": [
-			"fn ${1:<FUNCTION NAME}(${2:<NUMERIC EXPRESSION>})$0"
+			"fn ${1:<FUNCTION NAME>}(${2:<NUMERIC EXPRESSION>})$0"
 		],
 		"description":"The BASIC command FN executes a function which has been defined previously in the course of the program with the BASIC-command DEF."
 	},
