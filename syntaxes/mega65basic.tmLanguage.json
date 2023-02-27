@@ -75,19 +75,19 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|dopen|go64|help|input#|line input#|open|print#|setbit|set|sys|disk|def|verify)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|dclear|dclose#|dclose|dopen|go64|help|input#|line input#|open|print#|setbit|set|sys|disk|def|verify)"
 			}]	
 		},		
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(box|chardef|char|dot|pen|line|circle)"
+				"match": "(box|chardef|char|dot|pen|line|circle|cursor on|cursor off)"
 			}]
 		},		
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|color|collision|foreground|graphic clr|graphic|scnclr|screen|palette)"
+				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|palette)"
 			}]
 		},
 		"control": {

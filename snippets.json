@@ -1,25 +1,4 @@
 {
-	"test": {
-        "prefix": ["test-a", "test"], 
-        "body": [
-            "function ${1:Verb-Noun} {",
-            "\t[CmdletBinding()]",
-            "\tparam (",
-            "\t\t$0",
-            "\t)",
-            "\t",
-            "\tbegin {",
-            "\t}",
-            "\t",
-            "\tprocess {",
-            "\t}",
-            "\t",
-            "\tend {",
-            "\t}",
-            "}"
-        ],
-        "description": "Script cmdlet definition snippet"
-    },	
 	"abs": {
 		"prefix": "abs",
 		"body": [
@@ -279,6 +258,41 @@
 		],
 		"description": "The BASIC-Command DATA is used to store constant information in the program code, and is used with the BASIC-command READ. "
 	},
+	"cursor": {
+		"prefix": "cursor",
+		"body": [
+			"cursor ${1:${2|on,off|},}${3:<COLUMN>},${4:<ROW>},${5:<STYLE>}$0"
+		],
+		"description": "Moves the text cursor to the specified position on the current text screen. ON or OFF displays or hides the cursor."
+	},
+	"cut": {
+		"prefix": "cut",
+		"body": [
+			"cut ${1:<X POSITION>},${2:<Y POSITION>},${3:<WIDTH>},${4:<HEIGHT>}$0"
+		],
+		"description": "CUT is used on graphic screens and copies the content of the specified rectangle with upper left position x, y and the width and height to a buffer and fills the region afterwards with the colour of the currently selected pen."
+	},
+	"dclear": {
+		"prefix": "dclear",
+		"body": [
+			"dclear ${1:d${2:<DRIVE>}}${3:,u${4:<UNIT>}}$0"	
+		],
+		"description": "Sends an initialise command to the specified unit and drive."
+	},
+	"dclose#":{
+		"prefix": "dclose#",
+		"body": [
+			"dclose# ${1:<CHANNEL NUMBER>}$0"
+		],
+		"description":"Closes a single file or all files for the specified unit. DCLOSE is used either with a channel argument or a unit number, but never both."
+	},
+	"dclose":{
+		"prefix": "dclose",
+		"body": [
+			"dclose u${1:<UNIT>}$0"
+		],
+		"description":"Closes a single file or all files for the specified unit. DCLOSE is used either with a channel argument or a unit number, but never both."
+	},					
 	"def":{
 		"prefix": "def",
 		"body": [
