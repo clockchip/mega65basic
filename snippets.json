@@ -205,7 +205,7 @@
 	"collect": {
 		"prefix": "collect",
 		"body": [
-			"collect ${1:,d${2:<DRIVE>}}${3:,u${4:<UNIT>}}$0"
+			"collect ${1:d${2:<DRIVE>}}${3:,u${4:<UNIT>}}$0"
 		],
 		"description": "The BASIC command COLLECT rebuilds the BAM (Block Availability Map) of a disk, deleting splat files (files which have been opened, but not properly closed) and marking unused blocks as free."
 	},
@@ -514,14 +514,14 @@
 	"ifThen": {
 		"prefix": "if",
 		"body": [
-			"if ${1:<EXPRESSION>} then ${2:<TRUE CLAUSE>}${3: : ELSE ${4:<FALSE CLAUSE>}}$0"
+			"if ${1:<EXPRESSION>} then ${2:<TRUE CLAUSE>}${3: : else ${4:<FALSE CLAUSE>}}$0"
 		],
 		"description": "The BASIC command IF is used to test a condition."
 	},
 	"ifGoto": {
 		"prefix": "if",
 		"body": [
-			"if ${1:<EXPRESSION>} goto ${2:<LINE NUMBER>}${3: : ELSE ${4:<FALSE CLAUSE>}}$0"
+			"if ${1:<EXPRESSION>} goto ${2:<LINE NUMBER>}${3: : else ${4:<FALSE CLAUSE>}}$0"
 		],
 		"description": "The BASIC command IF is used to test a condition."
 	},
@@ -963,6 +963,13 @@
 		],
 		"description": "The numerical function TAN returns the tangent of the argument. The argument is expected in units of radians. The result is in the range (-1.0 to +1.0)"
 	},
+	"tempo": {
+		"prefix": "tempo",
+		"body": [
+			"tempo ${1:<SPEED>}$0"
+		],
+		"description": "Sets the playback speed for PLAY (speed 1-255). The duration (in seconds) of a whole note is computed with 'duration = 24/speed'."
+	},
 	"ti": {
 		"prefix": "ti",
 		"body": [
@@ -977,26 +984,68 @@
 		],
 		"description": "TI$ stores the time information of the RTC (Real-Time Clock) in text form, using the format: ”hh:mm:ss”. It is updated with every use."
 	},			
+	"trap": {
+		"prefix": "trap",
+		"body": [
+			"trap ${1:<LINE NUMBER>}$0"
+		],
+		"description": "TRAP with a valid line number registers the BASIC error handler. When a program has an error handler, the run-time behaviour changes."
+	},
+	"troff": {
+		"prefix": "troff",
+		"body": [
+			"troff"
+		],
+		"description": "The command TROFF turns off trace mode (switched on by TRON)."
+	},
+	"tron": {
+		"prefix": "tron",
+		"body": [
+			"tron"
+		],
+		"description": "The command TRON turns on trace mode."
+	},
+	"type": {
+		"prefix": "type",
+		"body": [
+			"type ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Prints the contents of a file containing text encoded as PETSCII."
+	},
+	"unlock": {
+		"prefix": "unlock",
+		"body": [
+			"unlock ${1:<FILENAME/PATTERN>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Used to unlock files. The specified file or a set of files, that matches the pattern, is unlocked and no more protected. It can be deleted afterwards with the commands DELETE, ERASE or SCRATCH"
+	},
+	"using": {
+		"prefix": "using",
+		"body": [
+			"using ${1:<FORMAT>};${2:<ARGUMENT>}"
+		],
+		"description": "Parses the format string and evaluates the argument."
+	},
 	"usr": {
 		"prefix": "usr",
 		"body": [
-			"usr(${1:<number>})$0"
+			"usr(${1:<NUMERIC EXPRESSION>})$0"
 		],
-		"description": "USR is a user-defined function in the built-in BASIC interpreter"
+		"description": "Invokes an assembly language routine whose memory address is stored at $02F8 - $02F9. The result of the numeric expression is written to floating point accumulator 1."
 	},
 	"val": {
 		"prefix": "val",
 		"body": [
-			"val(${1:<string>})$0"
+			"val(${1:<STRING EXPRESSION>})$0"
 		],
-		"description": "The function VAL finds a numerical value in a string."
+		"description": "Converts a string to a floating point value. This function acts in the same way as reading from a string."
 	},
 	"verify": {
 		"prefix": "verify",
 		"body": [
-			"verify ${1:<filename>},${2:<device number>}$0"
+			"verify ${1:<FILENAME>}${2:,${3:<UNIT>}${4:,${5:<BINFLAG>}}}$0"
 		],
-		"description": "The BASIC command VERIFY is used for verifying files."
+		"description": "VERIFY compares a binary file or BASIC program in memory with a disk file. It does the same as DVERIFY and BVERIFY, but the syntax is different."
 	},
 	"wait": {
 		"prefix": "wait",

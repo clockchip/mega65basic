@@ -18,6 +18,9 @@
 			"include": "#draw"
 		},
 		{
+			"include": "#sound"
+		},
+		{
 			"include": "#otherString"
 		},									
 		{
@@ -75,7 +78,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|open|print#|setbit|set|sys|disk|def|verify)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|open|print#|setbit|set|sys|disk|def|type|unlock|verify)"
 			}]	
 		},		
 		"draw": {
@@ -90,16 +93,22 @@
 				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|sprite|sprsav|palette)"
 			}]
 		},
+		"sound": {
+			"patterns": [{
+				"name": "keyword.sound.mega65basic",
+				"match": "(play|tempo)"
+			}]
+		},	
 		"control": {
 			"patterns": [{
 				"name": "keyword.control.mega65basic",
-		    	"match": "(begin|bend|do|end|exit|for|gosub|goto|if|loop|next|return|step|stop|then|to|while|until)"
+		    	"match": "(begin|bend|do|end|else|exit|for|gosub|goto|if|loop|next|return|step|stop|then|to|while|until)"
 			}]
 		},			
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|hex$|input|int|len|let|line|list|load|log|new|next|on|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|sleep|sound|speed|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|usr|val|wait)"
+		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|hex$|input|int|len|let|line|list|load|log|new|next|on|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|sleep|sound|speed|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|trap|troff|tron|usr|val|wait)"
 			}]
 		},
 		"otherString": {
