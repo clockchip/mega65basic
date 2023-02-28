@@ -833,16 +833,30 @@
 	"sgn": {
 		"prefix": "sgn",
 		"body": [
-			"sgn(${1:number})$0"
+			"sgn(${1:NUMERIC EXPRESSION})$0"
 		],
 		"description": "The function SGN gives autonomous of the algebraic sign the number (-1; 0; 1) of a numerical argument."
 	},
 	"sin": {
 		"prefix": "sin",
 		"body": [
-			"sin(${1:<numeric expression>})$0"
+			"sin(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "The numeric function SIN is a mathematical function which evaluates to the sine for a given angle, a number regarded as being in radians."
+	},
+	"sleep": {
+		"prefix": "sleep",
+		"body": [
+			"sleep ${1:<SECONDS>}$0"
+		],
+		"description": "Pauses execution for the given duration. The argument is a positive floating point number. The precision is 1 microsecond."
+	},
+	"sound": {
+		"prefix": "sound",
+		"body": [
+			"sound ${1:<VOICE>},${2:<FREQUENCY>},${3:<DURATION>}${4:,${5:<DIRECTION>},${6:<MIN FREQ>},${7:<SWEEP>},${8:<WAVE>},${9:<PULSE>}}$0"
+		],
+		"description": "Plays a sound effect."
 	},
 	"spc": {
 		"prefix": "spc",
@@ -850,6 +864,55 @@
 			"spc(${1:<integer>})$0"
 		],
 		"description": "SPC can be used to set a number of spaces."
+	},
+	"speed": {
+		"prefix": "speed",
+		"body": [
+			"speed ${1:<SPEED>}$0"
+		],
+		"description": "Set CPU clock to 1MHz, 3.5MHz or 40MHz. SPEED is a synonym of FAST. SPEED has no effect if POKE 0,65 has previously been used to set the CPU to 40MHz."
+	},
+	"sprcolor": {
+		"prefix": "sprcolor",
+		"body": [
+			"sprcolor ${1:${2:<MULTI-COLOR 1>},${3:<MULTI-COLOR 2>}}$0"
+		],
+		"description": "Sets additional two multi-colour sprite colours in addition to the foreground colour of the SPRITE command."
+	},
+	"spriteClr": {
+		"prefix": "sprite",
+		"body": [
+			"sprite clr"
+		],
+		"description": "SPRITE CLR clears all sprite data and sets all pointers and attributes to their default values."
+	},
+	"spriteLoad": {
+		"prefix": "sprite",
+		"body": [
+			"sprite load ${1:FILENAME}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "SPRITE LOAD loads sprite data from filename to sprite memory."
+	},
+	"spriteSave": {
+		"prefix": "sprite",
+		"body": [
+			"sprite save ${1:FILENAME}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "SPRITE SAVE saves sprite data from sprite memory to filename."
+	},
+	"sprite": {
+		"prefix": "sprite",
+		"body": [
+			"sprite ${1:<SPRITE NUMBER>}${2:,${3:<SWITCH>},${4:<FOREGROUND COLOUR>},${5:<PRIORITY>},${6:<X EXPANDION>},${7:<Y EXPANSION>},${8:<MODE>}}$0"
+		],
+		"description": "The command SPRITE switches a sprite on or off and sets its attributes:"
+	},
+	"sprsav": {
+		"prefix": "sprsav",
+		"body": [
+			"sprsav ${1:<SOURCE SPRITE NUMBER>},${2:<DESTINATION SPRITE NUMBER>}$0"
+		],
+		"description": "Copies sprite data."
 	},
 	"sqr": {
 		"prefix": "sqr",
