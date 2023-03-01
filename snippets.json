@@ -1064,16 +1064,23 @@
 	"vol": {
 		"prefix": "vol",
 		"body": [
-			"vol def ${1:<VOLUME>}$0"
+			"vol ${1:<VOLUME>}$0"
 		],
 		"description": "Sets the volume for sound output with SOUND or PLAY. volume 0 (off) to 15 (loudest)."
+	},
+	"vsync": {
+		"prefix": "vsync",
+		"body": [
+			"vsync ${1:<RASTER LINE>}$0"
+		],
+		"description": "Waits until the selected raster line is active. <RASTER LINE> (0 - 311) for PAL, (0 - 262) for NTSC mode."
 	},
 	"wait": {
 		"prefix": "wait",
 		"body": [
-			"wait ${1:<memory adress>},${2:<and mask>},${2:<flip mask (optional)>}$0"
+			"wait ${1:<MEMORY ADDRESS>},${2:<AND MASK>}${3:,${4:<XOR MASK>}}$0"
 		],
-		"description": "WAIT is a keyword in the built-in BASIC interpreter, which waits for a given memory location to match specific bit constellations."
+		"description": "Pauses the BASIC program until a requested bit pattern is read from the given address."
 	},
 	"{clr}": {
 		"prefix": "{clr}",
