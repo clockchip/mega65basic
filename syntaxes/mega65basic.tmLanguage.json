@@ -78,7 +78,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|open|print#|setbit|set|sys|disk|def|type|unlock|verify)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|open|peek|poke|print#|setbit|set|sys|disk|def|type|unlock|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
@@ -90,7 +90,7 @@
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|sprite|sprsav|palette|viewport clr|viewport def)"
+				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|sprite|sprsav|palette|viewport clr|viewport def|vsync|window)"
 			}]
 		},
 		"sound": {
@@ -108,7 +108,7 @@
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|hex$|input|int|len|let|line|list|load|log|new|next|on|peek|π|poke|pos|print|print#|read|restore|rnd|run|save|sgn|sin|sleep|sound|speed|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|trap|troff|tron|usr|val|wait)"
+		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|hex$|input|int|len|let|line|list|load|log|new|next|on|π|pos|print|print#|read|restore|rnd|run|save|sgn|sin|sleep|sound|speed|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|trap|troff|tron|usr|val|wait)"
 			}]
 		},
 		"otherString": {
@@ -121,7 +121,7 @@
 		"operators": {
 			"patterns": [{
 				"name": "keyword.operator.mega65basic",
-				"match": "(\\*|/|\\+|-|\\^|=|<>|<|>|<=|=<|>=|=>|and|or|not)"
+				"match": "(\\*|/|\\+|-|\\^|=|<>|<|>|<=|=<|>=|=>|and|or|not|xor)"
 			}]
 		},		
 		"strings": {

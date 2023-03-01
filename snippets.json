@@ -661,14 +661,14 @@
 	"peek": {
 		"prefix": "peek",
 		"body": [
-			"peek(${1:<memory address>})$0"
+			"peek(${1:<MEMORY ADDRESS>})$0"
 		],
 		"description": "The BASIC function PEEK returns the memory contents of the specified address, which must be in the range 0 through 65535. "
 	},
 	"poke": {
 		"prefix": "poke",
 		"body": [
-			"poke ${1:<memory address>},${2:number}$0"
+			"poke ${1:<MEMORY ADDRESS>},${2:VALUE}${3:,${4:VALUE}}$0"
 		],
 		"description": "The BASIC command POKE changes the content of any address in the memory address, ranging from 0 to 65535, to the given byte value in the range 0 through 255."
 	},
@@ -1033,6 +1033,13 @@
 		],
 		"description": "Invokes an assembly language routine whose memory address is stored at $02F8 - $02F9. The result of the numeric expression is written to floating point accumulator 1."
 	},
+	"until": {
+		"prefix": "until",
+		"body": [
+			"until"
+		],
+		"description": "A loop can be controlled by adding UNTIL or WHILE after the DO or LOOP."
+	},
 	"val": {
 		"prefix": "val",
 		"body": [
@@ -1081,6 +1088,41 @@
 			"wait ${1:<MEMORY ADDRESS>},${2:<AND MASK>}${3:,${4:<XOR MASK>}}$0"
 		],
 		"description": "Pauses the BASIC program until a requested bit pattern is read from the given address."
+	},
+	"while": {
+		"prefix": "while",
+		"body": [
+			"while"
+		],
+		"description": "A loop can be controlled by adding UNTIL or WHILE after the DO or LOOP."
+	},
+	"window": {
+		"prefix": "window",
+		"body": [
+			"window ${1:<LEFT>},${2:<TOP>},${3:<RIGHT>},${4:<BOTTOM>}${5:,${6:<CLEAR>}}$0"
+		],
+		"description": "Sets the text screen window."
+	},
+	"wpeek": {
+		"prefix": "wpeek",
+		"body": [
+			"wpeek ${1:<MEMORY ADDRESS>}$0"
+		],
+		"description": "Returns an unsigned 16-bit value (word) read from address (low byte) and address+1 (high byte)."
+	},
+	"wpoke": {
+		"prefix": "wpoke",
+		"body": [
+			"wpoke ${1:<MEMORY ADDRESS>},${2:<WORD>}${3:,${4:<WORD>}}$0"
+		],
+		"description": "Writes one or more words into memory or memory mapped I/O, starting at address."
+	},
+	"xor": {
+		"prefix": "xor",
+		"body": [
+			"${1:<OPERAND>} xor ${2:<OPERAND>}$0"
+		],
+		"description": "The Boolean XOR operator performs a bit-wise logical exclusive OR operation on two 16-bit values."
 	},
 	"{clr}": {
 		"prefix": "{clr}",
