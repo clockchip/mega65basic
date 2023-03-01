@@ -90,13 +90,13 @@
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|sprite|sprsav|palette)"
+				"match": "(background|border|bump|color|collision|cut|foreground|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|sprite|sprsav|palette|viewport clr|viewport def)"
 			}]
 		},
 		"sound": {
 			"patterns": [{
 				"name": "keyword.sound.mega65basic",
-				"match": "(play|tempo)"
+				"match": "(play|tempo|vol)"
 			}]
 		},	
 		"control": {

@@ -1047,6 +1047,27 @@
 		],
 		"description": "VERIFY compares a binary file or BASIC program in memory with a disk file. It does the same as DVERIFY and BVERIFY, but the syntax is different."
 	},
+	"viewportClr": {
+		"prefix": "viewport",
+		"body": [
+			"viewport clr"
+		],
+		"description": "VIEWPORT CLR fills the clipping region with the color of the drawing pen."
+	},
+	"viewportDef": {
+		"prefix": "viewport",
+		"body": [
+			"viewport def ${1:<X POS>},${2:<Y POS>},${3:<WIDTH>},${4:<HEIGHT>}$0"
+		],
+		"description": "VIEWPORT DEF defines a clipping region with the origin (upper left position) set to x, y and the width and height. All following graphics commands are limited to the VIEWPORT region."
+	},
+	"vol": {
+		"prefix": "vol",
+		"body": [
+			"vol def ${1:<VOLUME>}$0"
+		],
+		"description": "Sets the volume for sound output with SOUND or PLAY. volume 0 (off) to 15 (loudest)."
+	},
 	"wait": {
 		"prefix": "wait",
 		"body": [
