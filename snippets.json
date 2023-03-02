@@ -16,7 +16,7 @@
 	"append#": {
 		"prefix": "append#",
 		"body": [
-			"append#${1:<CHANNEL>},${2:<FILENAME>}${3:,d(${4:<DRIVE>})}${5:,u(${6:<UNIT>})}$0"
+			"append#${1:<CHANNEL>},${2:<FILENAME>}${3:,d${4:<DRIVE>}}${5:,u${6:<UNIT>}}$0"
 		],
 		"description": "Opens an existing sequential file of type SEQ or USR for writing, and positions the write pointer at the end of the file."
 	},		
@@ -656,14 +656,49 @@
 		"body": [
 			"palette restore$0"
 		],
-		"description": "PALETTE RESTORE resets the system palette to the default values. "
+		"description": "PALETTE RESTORE resets the system palette to the default values."
 	},
 	"peek": {
 		"prefix": "peek",
 		"body": [
 			"peek(${1:<MEMORY ADDRESS>})$0"
 		],
-		"description": "The BASIC function PEEK returns the memory contents of the specified address, which must be in the range 0 through 65535. "
+		"description": "The BASIC function PEEK returns the memory contents of the specified address, which must be in the range 0 through 65535."
+	},
+	"pen": {
+		"prefix": "pen",
+		"body": [
+			"pen ${1:${2:<PEN>},}${3:<COLOUR>}$0"
+		],
+		"description": "Sets the colour of the graphic pen."
+	},
+	"pixel": {
+		"prefix": "pixel",
+		"body": [
+			"pixel(${1:<X POS>},${2:<Y POS>})$0"
+		],
+		"description": "Returns the colour of a pixel at the given position."
+	},
+	"play": {
+		"prefix": "play",
+		"body": [
+			"play ${1:<STRING 1>},${2:<STRING 2>}$0"
+		],
+		"description": "PLAY can be followed by up to six comma-separated string arguments, where each argument provides the sequence of notes and directives to be played."
+	},
+	"pointer": {
+		"prefix": "pointer",
+		"body": [
+			"pointer(${1:<VARIABLE>})$0"
+		],
+		"description": "Returns the current address of a variable or an array element as a 32-bit pointer."
+	},
+	"polygon": {
+		"prefix": "polygon",
+		"body": [
+			"polygon ${1:<X POS>},${2:<Y POS>},${3:<X RAD>},${4:<Y RAD>},${5:<SIDES>}${6:,${7:<DRAWSIDES>},${8:<SUBTEND>},${9:<ANGLE>},${10:<SOLID>}}$0"
+		],
+		"description": "Draws a regular n-sided polygon. The polygon is drawn using the current drawing context set with SCREEN, PALETTE, and PEN."
 	},
 	"poke": {
 		"prefix": "poke",
@@ -675,9 +710,16 @@
 	"pos": {
 		"prefix": "pos",
 		"body": [
-			"pos(${1:<dummy argument>})$0"
+			"pos(${1:<DUMMY ARGUMENT>})$0"
 		],
-		"description": "The function POS determined the actual position of the cursor between 0 (first, leftmost column) and 79 (last, rightmost column in the second line) of the logical line on screen."
+		"description": "Returns the cursor column relative to the currently used window. 'DUMMY ARGUMENT' a numeric value, which is ignored."
+	},
+	"pot": {
+		"prefix": "pot",
+		"body": [
+			"pot(${1:<PADDLE NUMBER>})$0"
+		],
+		"description": "Returns the position of a paddle. A value greater than 255 indicates that the fire button is also being pressed."
 	},
 	"print": {
 		"prefix": "print",
@@ -687,18 +729,46 @@
 		"description": "The BASIC command PRINT is used to print data to the current output device, normally the screen."
 	},
 	"print#": {
-		"prefix": "print#",
+		"prefix": "print",
 		"body": [
-			"print#${1:<logical filenumber>},${2:<variable>}$0"
+			"print#${1:<CHANNEL NUMBER>},${2:<ARGUMENTS>}$0"
 		],
-		"description": "The BASIC command PRINT# is used for storing data in a file. Before PRINT# can be used, the destination file has to be opened with the BASIC command OPEN."
+		"description": "Evaluates the argument list, and prints the formatted values to the device assigned to channel."
+	},
+	"printUsing": {
+		"prefix": "print",
+		"body": [
+			"print${1:#${2:<CHANNEL NUMBER>},} using ${3:<FORMAT>};${4:<ARGUMENT>}$0"
+		],
+		"description": "Parses the format string and evaluates the argument."
+	},
+	"rcolor": {
+		"prefix": "rcolor",
+		"body": [
+			"rcolor(${1:<COLOUR SOURCE>})$0"
+		],
+		"description": "Returns the current colour index for the selected colour source."
+	},
+	"rcursor": {
+		"prefix": "rcursor",
+		"body": [
+			"rcursor ${1:<COLUMN VARIABLE>},${2:<ROW VARIABLE>}$0"
+		],
+		"description": "Returns the current cursor column and row."
 	},
 	"read": {
 		"prefix": "read",
 		"body": [
-			"read ${1:<variable>}$0"
+			"read ${1:<VARIABLE>}$0"
 		],
 		"description": "The BASIC command READ is used for reading constant values from DATA lines into the indicated variables."
+	},
+	"record#": {
+		"prefix": "record#",
+		"body": [
+			"record#${1:<CHANNEL NUMBER>},${2:<RECORD>}${3:,${4:<RECORD>}}$0"
+		],
+		"description": "Positions the read/write pointer of a relative file."
 	},
 	"rem": {
 		"prefix": "rem",
@@ -731,27 +801,160 @@
 			"$0"
 		],
 		"description": "The BASIC comment."
-	},	
+	},
+	"rename": {
+		"prefix": "rename",
+		"body": [
+			"rename ${1:<OLD>} to ${2:<NEW>}${3:,d${4:<DRIVE>}}${5:,u${6:<UNIT>}}$0"
+		],
+		"description": "Renames a disk file."
+	},
+	"restore": {
+		"prefix": "restore",
+		"body": [
+			"restore ${1:<LINE>}$0"
+		],
+		"description": "Set, or reset the internal pointer for READ from DATA statements."
+	},
+	"resumeLine": {
+		"prefix": "resume",
+		"body": [
+			"resume ${1:<LINE>}$0"
+		],
+		"description": "Used in a TRAP routine to resume normal program execution after handling an error."
+	},
+	"resumeNext": {
+		"prefix": "resume",
+		"body": [
+			"resume next"
+		],
+		"description": "Used in a TRAP routine to resume normal program execution after handling an error."
+	},
+	"return": {
+		"prefix": "return",
+		"body": [
+			"return"
+		],
+		"description": "Returns control from a subroutine, which was called with GOSUB or an event handler declared with COLLISION."
+	},
+	"rgraphic": {
+		"prefix": "rgraphic",
+		"body": [
+			"rgraphic(${1:<SCREEN NUMBER>},${2:<PARAMETER>})$0"
+		],
+		"description": "Return graphic screen status and parameters."
+	},		
 	"right$": {
 		"prefix": "right$",
 		"body": [
-			"right$(${1:<string>},${2:<integer number>})$0"
+			"right$(${1:<STRING>},${2:<AMOUNT OF CHARACTERS>})$0"
 		],
-		"description": "RIGHT$ will be used for cutting strings into component parts beginning at the right side until to the left side."
+		"description": "Returns a string containing the last n characters from string."
+	},
+	"rmouse": {
+		"prefix": "rmouse",
+		"body": [
+			"rmouse ${1:<X VARIABLE>},${2:<Y VARIABLE>},${3:<BUTTON VARIABLE>}$0"
+		],
+		"description": "Reads mouse position and button status."
 	},
 	"rnd": {
 		"prefix": "rnd",
 		"body": [
-			"rnd(${1:number})*${2:number}$0"
+			"rnd(${1:TYPE})$0"
 		],
-		"description": "The function RND generates random floating point numbers in the range of 0.0 (inclusive) to 1.0 (exclusive). "
+		"description": "The function RND returns a pseudo random number."
+	},
+	"rpalette": {
+		"prefix": "rpalette",
+		"body": [
+			"rpalette(${1:<SCREEN NUMBER>},${2:<INDEX>},${3:<RGB>})$0"
+		],
+		"description": "Returns the red, green or blue value of a palette colour index."
+	},
+	"rpen": {
+		"prefix": "rpen",
+		"body": [
+			"rpen(${1:<PEN NUMBER>})$0"
+		],
+		"description": "Returns the colour index of pen n."
+	},
+	"rplay": {
+		"prefix": "rplay",
+		"body": [
+			"rplay(${1:<VOICE>})$0"
+		],
+		"description": "Returns a value of 1 or 0, to indicate whether a melody is playing on the given voice channel or not."
+	},
+	"rreg": {
+		"prefix": "rreg",
+		"body": [
+			"rreg ${1:<A REG>},${2:<X REG>},${3:<Y REG>},${4:<Z REG>},${5:<S REG>},$0"
+		],
+		"description": "Reads the values that were in the CPU registers after a SYS call, into the specified variables."
+	},
+	"rspcolor": {
+		"prefix": "rspcolor",
+		"body": [
+			"rspcolor(${1:<MULTI COLOUR NUMBER>})$0"
+		],
+		"description": "Returns multi-colour sprite colours."
+	},
+	"rspeed": {
+		"prefix": "rspeed",
+		"body": [
+			"rspeed(${1:<DUMMY ARGUMENT>})$0"
+		],
+		"description": "Returns the current CPU clock in MHz. Numeric 'DUMMY ARGUMENT', which is ignored."
+	},
+	"rsppos": {
+		"prefix": "rsppos",
+		"body": [
+			"rsppos(${1:<SPRITE NUMBER>},${2:<SPRITE PARAMETER>})$0"
+		],
+		"description": "Returns a sprite’s position and speed."
+	},
+	"rsprite": {
+		"prefix": "rsprite",
+		"body": [
+			"rsprite(${1:<SPRITE NUMBER>},${2:<SPRITE PARAMETER>})$0"
+		],
+		"description": "Returns a sprite’s parameter."
+	},
+	"runLine": {
+		"prefix": "run",
+		"body": [
+			"run ${1:<LINE NUMBER>}$0"
+		],
+		"description": "Run the program that is currently in memory."
+	},
+	"runFile": {
+		"prefix": "run",
+		"body": [
+			"run ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Load and run a BASIC program."
+	},
+	"rwindow": {
+		"prefix": "rwindow",
+		"body": [
+			"rwindow(${1:<SCREEN PARAMETER>})$0"
+		],
+		"description": "Returns information regarding the current text window."
 	},
 	"save": {
 		"prefix": "save",
 		"body": [
-			"save ${1:<filename>},${2:<device number>}${3:<secondary number>}$0"
+			"save ${1:<FILENAME>}${2:,u${3:<UNIT>}}$0"
 		],
-		"description": "A written BASIC or computer code program, which exists in temporary RAM-memory, can be saved with the BASIC command SAVE permanently to a storage device such as a datasette, diskdrive or harddisk as a filetype program (PRG)."
+		"description": "Saves a BASIC program to a file of type PRG."
+	},
+	"saveiff": {
+		"prefix": "saveiff",
+		"body": [
+			"Saveiff ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Saves a picture from memory to a disk file in IFF format."
 	},
     "scnclr": {
 		"prefix": "scnclr",
