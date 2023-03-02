@@ -952,9 +952,16 @@
 	"saveiff": {
 		"prefix": "saveiff",
 		"body": [
-			"Saveiff ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+			"scratch ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
 		],
 		"description": "Saves a picture from memory to a disk file in IFF format."
+	},
+	"scratch": {
+		"prefix": "scratch",
+		"body": [
+			"scratch ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}${6:,r}$0"
+		],
+		"description": "Used to erase a disk file."
 	},
     "scnclr": {
 		"prefix": "scnclr",
