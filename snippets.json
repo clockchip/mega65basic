@@ -651,12 +651,40 @@
 		],
 		"description": "The command MEM uses MASK4 and MASK5 which byte values, that are interpreted as mask of 8 bits. Each bit set to 1 reserves an 8K segment of memory in bank 4 for the first argument and in bank 5 for the second argument.."
 	},
+	"merge": {
+		"prefix": "merge",
+		"body": [
+			"merge ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "MERGE loads a BASIC program file from disk and appends it to the program in memory."
+	},
 	"mid$": {
 		"prefix": "mid$",
 		"body": [
-			"mid$(${1:<string>},${2:<integer number (start)>},${3:<integer number (end optional)>})$0"
+			"mid$(${1:<STRING>},${2:<START INDEX>},${3:<SUB-STRING LENGHT>}) ${4:= ${5:<STRING EXPRESSION>}}$0"
 		],
-		"description": "MID$ will be used for cutting strings into component parts inside strings beginning by the startchar (1. integer number) until to the indicated length number (2. integer number) from the left side to the right side."
+		"description": "MID$ can be used either as a function which returns a string, or as a statement for inserting sub-strings into an existing string."
+	},
+	"mkdir": {
+		"prefix": "mkdir",
+		"body": [
+			"mkdir ${1:<DIRNAME>},l${3:<SIZE>}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Make (create) a subdirectory on a floppy or D81 disk image."
+	},
+	"mod": {
+		"prefix": "mod",
+		"body": [
+			"mod(${1:<DIVIDEND>},${2:<DIVIDEND>})$0"
+		],
+		"description": "The MOD function returns the remainder of the division."
+	},
+	"monitor": {
+		"prefix": "monitor",
+		"body": [
+			"monitor"
+		],
+		"description": "Calls the machine language monitor program, which is mainly used for debugging."
 	},
 	"not": {
 		"prefix": "not",
