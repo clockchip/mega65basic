@@ -707,26 +707,75 @@
 		],
 		"description": "MOUSE OFF disables the mouse driver and frees the associated sprite."
 	},
+	"movspr": {
+		"prefix": "movspr",
+		"body": [
+			"movspr ${1:<NUMBER>},${2:<POSITION>}$0"
+		],
+		"description": "Moves a sprite on screen. Each position argument consists of two 16-bit values, which specify either an absolute coordinate, a relative coordinate, an angle, or a speed."
+	},
+	"new": {
+		"prefix": "new",
+		"body": [
+			"new"
+		],
+		"description": "Resets all BASIC parameters to their default values."
+	},
+	"newRestore": {
+		"prefix": "new",
+		"body": [
+			"new restore"
+		],
+		"description": "If there were no LOAD operations, or editing performed after NEW, the program can be restored with the NEW RESTORE."
+	},
+	"next": {
+		"prefix": "next",
+		"body": [
+			"next"
+		],
+		"description": "Marks the end of the BASIC loop associated with the given index variable. When a BASIC loop is declared with FOR, it must end with NEXT."
+	},
 	"not": {
 		"prefix": "not",
 		"body": [
-			"not(${1:<boolean/integer>})$0"
+			"not(${1:<OPERAND>})$0"
 		],
-		"description": "NOT reverse the boolean true into false."
+		"description": "Performs a bit-wise logical NOT operation on a 16-bit value."
+	},
+	"off": {
+		"prefix": "off",
+		"body": [
+			"off"
+		],
+		"description": "OFF is a secondary keyword used in combination with primary keywords, such as COLOR, KEY, and MOUSE."
 	},
 	"on": {
 		"prefix": "on",
 		"body": [
-			"on ${1:<index>} ${2|gosub,goto|} ${3:<line>}$0"
+			"on ${1:<EXPRESSION>} ${2|gosub,goto|} ${3:<LINE NUMBER>}$0"
 		],
-		"description": "The command ON is part of a structure which jumps to a specific line."
+		"description": "ON calls either a computed GOSUB or GOTO statement."
 	},
 	"open": {
 		"prefix": "open",
 		"body": [
-			"open ${1:<logical filenumber>},${2:<device number>}${3:<secondary number>}$0"
+			"open ${1:<CHANNEL NUMBER>},${2:<DEVICE NUMBER>}${3:,${4:<SECONDARY NUMBER>}${5:,${6:<FILENAME>}}}$0"
 		],
-		"description": "The BASIC command OPEN is used for opening a logical file"
+		"description": "Opens an input/output channel for a device."
+	},
+	"or": {
+		"prefix": "or",
+		"body": [
+			"${1:<OPERAND>} or ${2:<OPERAND>}$0"
+		],
+		"description": "Performs a bit-wise logical OR operation on two 16-bit values."
+	},
+	"paint": {
+		"prefix": "paint",
+		"body": [
+			"paint ${1:<X COORDINATE>},${2:<Y COORDINATE>},${3:<PAINT MODE>}${4:,${5:<REGION BORDER COLOUR>}}$0"
+		],
+		"description": "Performs a flood fill of an enclosed graphics area using the current pen colour."
 	},
 	"palette": {
 		"prefix": "palette",
