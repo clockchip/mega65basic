@@ -686,6 +686,27 @@
 		],
 		"description": "Calls the machine language monitor program, which is mainly used for debugging."
 	},
+	"mount": {
+		"prefix": "mount",
+		"body": [
+			"mount ${1:<FILENAME>}${2:,u${3:<UNIT>}}$0"
+		],
+		"description": "Mount a floppy image file of type D81 from SD-Card to unit 8 (default) or unit 9."
+	},
+	"mouseOn": {
+		"prefix": "mouse",
+		"body": [
+			"mouse on${1:,${2:<PORT>},${3:<SPRITE>},${4:<POS>}}$0"
+		],
+		"description": "Enables the mouse driver and connects the mouse at the specified port with the mouse pointer sprite."
+	},
+	"mouseOff": {
+		"prefix": "mouse",
+		"body": [
+			"mouse off"
+		],
+		"description": "MOUSE OFF disables the mouse driver and frees the associated sprite."
+	},
 	"not": {
 		"prefix": "not",
 		"body": [
