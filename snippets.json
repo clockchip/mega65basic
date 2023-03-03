@@ -598,16 +598,58 @@
 	"load": {
 		"prefix": "load",
 		"body": [
-			"load ${1:<filename>},${2:<device number>}${3:<secondary number>}$0"
+			"load ${1:<FILENAME>}${2:,u${3:<UNIT>}${4:,${5:<FLAG>}}}$0"
 		],
-		"description": "The BASIC command LOAD is normally used for loading program files (PRG) like BASIC, machine language programs, but actually any kind of data from datasette or disk drive into RAM."
+		"description": "The BASIC command LOAD loads a file of type PRG into memory reserved for BASIC programs."
+	},
+	"loadiff": {
+		"prefix": "loadiff",
+		"body": [
+			"loadiff ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Loads an IFF file into graphics memory."
+	},
+	"lock": {
+		"prefix": "lock",
+		"body": [
+			"lock ${1:<FILENAME/PATTERN>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "Used to lock files. The specified file or a set of files, that matches the pattern, is locked and cannot be deleted with the commands DELETE, ERASE or SCRATCH."
 	},
 	"log": {
 		"prefix": "log",
 		"body": [
-			"log(${1:<number>})$0"
+			"log(${1:<NUMERIC EXPRESSION>})$0"
 		],
-		"description": "The mathematical function LOG is a natural logarithm with the basis e(E)."
+		"description": "Computes the value of the natural logarithm of the argument. The natural logarithm uses Euler’s number (2.71828183) as base, not 10 which is typically used in log functions on a pocket calculator."
+	},
+	"log10": {
+		"prefix": "log10",
+		"body": [
+			"log10(${1:<NUMERIC EXPRESSION>})$0"
+		],
+		"description": "Computes the value of the decimal logarithm of the argument. The decimal logarithm uses 10 as base."
+	},
+	"loop": {
+		"prefix": "loop",
+		"body": [
+			"loop ${1:${2|until,while|} ${3:<LOGICAL EXPRESSION>}}$0"
+		],
+		"description": "LOOP define the start of a BASIC loop. Using LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
+	},
+	"lpen": {
+		"prefix": "lpen",
+		"body": [
+			"lpen(${1:<COORDINATE>})$0"
+		],
+		"description": "This function requires the use of a CRT monitor and a light pen connected to port 1. LPEN(0) = X position and LPEN(1) = Y position."
+	},
+	"mem": {
+		"prefix": "mem",
+		"body": [
+			"mem ${1:<MASK4>},${2:<MASK5>}$0"
+		],
+		"description": "The command MEM uses MASK4 and MASK5 which byte values, that are interpreted as mask of 8 bits. Each bit set to 1 reserves an 8K segment of memory in bank 4 for the first argument and in bank 5 for the second argument.."
 	},
 	"mid$": {
 		"prefix": "mid$",
@@ -657,6 +699,13 @@
 			"palette restore$0"
 		],
 		"description": "PALETTE RESTORE resets the system palette to the default values."
+	},
+	"paste": {
+		"prefix": "paste",
+		"body": [
+			"paste ${1:<X POS>},${2:<Y POS>},${3:<WIDTH>},${4:<HEIGHT>}$0"
+		],
+		"description": "PASTE is used on graphic screens and pastes the content of the cut/- copy/paste buffer into the screen."
 	},
 	"peek": {
 		"prefix": "peek",
@@ -952,7 +1001,7 @@
 	"saveiff": {
 		"prefix": "saveiff",
 		"body": [
-			"scratch ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+			"saveiff ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
 		],
 		"description": "Saves a picture from memory to a disk file in IFF format."
 	},
