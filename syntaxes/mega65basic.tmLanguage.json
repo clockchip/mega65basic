@@ -78,7 +78,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|lock|mem|merge|mkdir|monitor|mount|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|lock|mem|merge|mkdir|monitor|mount|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
