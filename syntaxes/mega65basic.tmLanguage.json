@@ -3,6 +3,9 @@
 	"name": "Mega65 Basic",
 	"patterns": [
 		{
+			"include": "#otherString"
+		},	
+		{
 			"include": "#dos"
 		},		
 		{
@@ -19,10 +22,7 @@
 		},
 		{
 			"include": "#sound"
-		},
-		{
-			"include": "#otherString"
-		},									
+		},					
 		{
 			"include": "#other"
 		},		
@@ -78,13 +78,13 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen|go64|help|input#|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|dsave|ds|dt$|go64|help|input#|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(box|chardef|char|dot|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
+				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
 			}]
 		},		
 		"graphics": {
@@ -108,13 +108,13 @@
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|hex$|input|int|len|let|line|list|load|log10|log|mod|new|next|off|on|π|pos|print|read|restore|rnd|run|sgn|sin|sleep|rspeed|speed|spc|sqr|status|st|stop|tab|tan|time|ti|time|ti|trap|troff|tron|usr|val|wait)"
+		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|input|int|len|let|line|list|load|log10|log|mod|new|next|off|on|π|pos|print|read|restore|rnd|run|sgn|sin|sleep|rspeed|speed|spc|sqr|status|st|stop|tab|tan|ti|trap|troff|tron|usr|val|wait)"
 			}]
 		},
 		"otherString": {
 			"patterns": [{
 				"name": "keyword.otherString.mega65basic",
-		    	"begin": "(chr|left|mid|right|str|time|ti)",
+		    	"begin": "(chr|ds|left|mid|right|str|ti|hex)",
 				"end": "\\$"
 			}]
 		},

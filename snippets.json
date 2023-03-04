@@ -381,6 +381,41 @@
 		],
 		"description": "DO and LOOP define the start of a BASIC loop. Using DO and LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
 	},
+	"dopen": {
+		"prefix": "dopen",
+		"body": [
+			"dopen#${1:<CHANNEL NUMBER>},${2:<FILENAME>}${3:,l${4:<RECLEN>}}${5:,w}${6:,d${7:<DRIVE>}}${8:,u${9:<UNIT>}}$0"			
+		],
+		"description": "Opens a file for reading or writing."
+	},
+	"dpat": {
+		"prefix": "dpat",
+		"body": [
+			"dpat ${1:<TYPE>}${2:,${3:<NUMBER>},${5:<PATTERN>}}$0"			
+		],
+		"description": "Drawing PATtern sets the pattern of the graphics context for drawing commands."
+	},
+	"ds": {
+		"prefix": "ds",
+		"body": [
+			"ds"			
+		],
+		"description": "DS holds the status of the last disk operation."
+	},
+	"ds$": {
+		"prefix": "ds",
+		"body": [
+			"ds$"			
+		],
+		"description": "DS$ holds the status of the last disk operation in text form of the format: Code,Message,Track,Sector."
+	},
+	"dsave": {
+		"prefix": "dsave",
+		"body": [
+			"dsave ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "The BASIC command DISK SAVE saves the BASIC program to a file of type PRG."
+	},
 	"dot": {
 		"prefix": "dot",
 		"body": [
@@ -1330,7 +1365,7 @@
 	"ti": {
 		"prefix": "ti",
 		"body": [
-			"ti$"
+			"ti"
 		],
 		"description": "TI is a high precision timer with a resolution of 1 micro second. It is started or reset with CLR TI, and can be accessed in the same way as any other variable in expressions."
 	},
