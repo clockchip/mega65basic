@@ -3,6 +3,9 @@
 	"name": "Mega65 Basic",
 	"patterns": [
 		{
+			"include": "#special"
+		},	
+		{
 			"include": "#otherString"
 		},	
 		{
@@ -63,6 +66,12 @@
 				"match": "(rem)(.*)"
 			}]
 		},
+		"special": {
+			"patterns": [{
+				"name": "storage.modifier.mega65basic",
+				"match": "(foreground|freezer)"
+			}]
+		},	
 		"vardefs": {
 			"patterns": [{
 				"name": "storage.modifier.mega65basic",
@@ -78,19 +87,19 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|append|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|ds|dverify|edit|edma|ellipse|else|el|end|erase|er|fast|format|fread#|fwrite#|go64|header|highlight|help|input#|import|info|instr|joy|key|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
+				"match": "(append#|append|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|gcopy|copy|catalog|clr bit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|dsave|ds\\$|ds|dverify|edit|edma|ellipse|else|el|end|erase|er|fast|format|fread#|fwrite#|go64|header|highlight|help|input#|import|info|instr|joy|key|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|set bit|set|bit|saveiff|save|sys|disk|def fn|fn|def|type|unlock|using|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon|dsave)"
+				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
 			}]
 		},		
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|rspcolor|color|collision|cut|foreground|font|load iff|movspr|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite save|sprsav|rsprite|sprite|sprsav|rsppos|pixel|rpalette|palette|paste|rcolor|rcursor|rgraphic|viewport clr|viewport def|vsync|rwindow|window)"
+				"match": "(background|border|bump|rspcolor|color|collision|cut|font|load iff|movspr|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite save|sprsav|rsprite|sprite|sprsav|rsppos|pixel|rpalette|palette|paste|rcolor|rcursor|rgraphic|viewport clr|viewport def|vsync|rwindow|window)"
 			}]
 		},
 		"sound": {
@@ -108,13 +117,13 @@
 		"other": {
 			"patterns": [{
 				"name": "keyword.other.mega65basic",
-		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|input|int|len|let|line|list|load|log10|log|mod|new|next|off|on|π|pos|print|read|restore|rnd|run|sgn|sin|sleep|rspeed|speed|spc|sqr|status|st|stop|tab|tan|ti|trap|troff|tron|usr|val|wait)"
+		    	"match": "(abs|asc|atn|auto|change|clr|cont|cos|data|dec|exp|fre|getkey|get|get#|input|int|len|let|line|list p|load|log10|log|mod|new|next|off|on|π|pos|print|read|restore|rnd|run|sgn|sin|sleep|rspeed|speed|spc|sqr|status|st|stop|tab|tan|ti|trap|troff|tron|usr|val|wait)"
 			}]
 		},
 		"otherString": {
 			"patterns": [{
 				"name": "keyword.otherString.mega65basic",
-		    	"begin": "(chr|ds|dt|err|left|mid|right|str|ti|hex)",
+		    	"begin": "(chr|dt|err|left|mid|right|str|ti|hex)",
 				"end": "\\$"
 			}]
 		},

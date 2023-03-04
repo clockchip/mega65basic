@@ -51,7 +51,7 @@
 	"backupD": {
 		"prefix": "backup",
 		"body": [
-			"backup d${1|0,1|} to d${2|1,0|}${3:, u${4:<UNIT>}}$0"
+			"backup d${1|0,1|} to d${2|1,0|}${3:,u${4:<UNIT>}}$0"
 		],
 		"description": "The second form of BACKUP, specifying drives for source and target, is meant to be used for dual drive units connected to the IEC bus. For example: CBM 4040, 8050, 8250 via an IEEE-488 to IEC adapter."
 	},	
@@ -76,17 +76,24 @@
 		],
 		"description": "BEGIN and BEND act as a pair of braces around a compound statement to be executed after THEN or ELSE. This overcomes the single line limitation of the standard IF ... THEN ... ELSE clause."
 	},
+	"bit": {
+		"prefix": "bit",
+		"body": [
+			"bit"
+		],
+		"description": "BIT is a secondary keyword and can only be used in conjunction with CLR or SET."
+	},
 	"bload": {
 		"prefix": "bload",
 		"body": [
-			"bload ${1:<FILENAME>}${2:, b${3:<BANK>}}${4:, p${5:<MEMORY ADDRESS>}}${6:, r}${7:, d${8:<DRIVE>}}${9:, u${10:<UNIT>}}$0"
+			"bload ${1:<FILENAME>}${2:,b${3:<BANK>}}${4:,p${5:<MEMORY ADDRESS>}}${6:,r}${7:,d${8:<DRIVE>}}${9:,u${10:<UNIT>}}$0"
 		],
 		"description": "The command BLOAD (Binary LOAD) loads a file of type PRG into RAM at address P."
 	},
 	"boot": {
 		"prefix": "boot",
 		"body": [
-			"boot ${1:${2:<FILENAME>}${3:,B${4:<BANK>}}${5:,P${6:<MEMORY ADDRESS>}}${7:,D${8:<DRIVE>}}${9:,U${10:<UNIT>}}}$0"
+			"boot ${1:${2:<FILENAME>}${3:,b${4:<BANK>}}${5:,p${6:<MEMORY ADDRESS>}}${7:,d${8:<DRIVE>}}${9:,u${10:<UNIT>}}}$0"
 		],
 		"description": "BOOT filename loads a file of type PRG into RAM at address P and bank B, and starts executing the code at the load address. BOOT with no parameters attempts to load and execute a file named AUTOBOOT.C65 from the default unit 8."
 	},
@@ -107,14 +114,14 @@
 	"box": {
 		"prefix": "box",
 		"body": [
-			"box ${1:<X0>},${2:<Y0>}${3:, ${4:<X1>},${5:<Y1>}}, ${6:<X2>},${7:<Y2>}${8:, ${9:<X3>},${10:<Y3>}}${11:, solid}$0"
+			"box ${1:<X0>},${2:<Y0>}${3:, ${4:<X1>},${5:<Y1>}}, ${6:<X2>},${7:<Y2>}${8:, ${9:<X3>},${10:<Y3>}}${11:,solid}$0"
 		],
 		"description": "The first form of BOX with two coordinate pairs and an optional solid parameter draws a simple rectangle, assuming that the coordinate pairs declare two diagonally opposite corners. The second form with four coordinate pairs declares a path of four points, which will be connected with lines. The path is closed by connecting the last coordinate with the first."
 	},
 	"bsave": {
 		"prefix": "bsave",
 		"body": [
-			"bsave ${1:<FILENAME>}, p${2:<START ADDRESS>} to p${3:<END ADDRESS>}${4:, b${5:<BANK NUMBER>}}${6:, d${7:<DRIVE>}}${9:, u${10:<UNIT>}}$0"
+			"bsave ${1:<FILENAME>},p${2:<START ADDRESS>} to p${3:<END ADDRESS>}${4:,b${5:<BANK NUMBER>}}${6:,d${7:<DRIVE>}}${9:,u${10:<UNIT>}}$0"
 		],
 		"description": "The command BSAVE (Binary SAVE) saves a memory range to a file of type PRG."
 	},
@@ -128,14 +135,14 @@
 	"bverify": {
 		"prefix": "bverify",
 		"body": [
-			"bverify ${1:<FILENAME>}${2:, p${3:<MEMORY ADDRESS>}}${4:, b${5:<BANK NUMBER>}}${6:, d${7:<DRIVE>}}${8:, u${9:<UNIT>}}$0"
+			"bverify ${1:<FILENAME>}${2:,p${3:<MEMORY ADDRESS>}}${4:,b${5:<BANK NUMBER>}}${6:,d${7:<DRIVE>}}${8:,u${9:<UNIT>}}$0"
 		],
 		"description": "The command BVERIFY (Binary VERIFY) compares a memory range to a file of type PRG."
 	},
 	"catalog": {
 		"prefix": "catalog",
 		"body": [
-			"catalog ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+			"catalog ${1:<FILEPATTERN>}${2:,w}${3:,r}${4:,d${5:<DRIVE>}}${6:,u${7:<UNIT>}}$0"
 		],
 		"description": "Prints a file catalog/directory of the specified disk."
 	},
@@ -163,7 +170,7 @@
 	"chr": {
 		"prefix": "chr",
 		"body": [
-			"chr$(${1:<NUMERIC EXPRESSION})$0"
+			"chr$(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "CHR$ can be used to convert a number between 0 and 255 into an PETSCII character (of string type) and is the inverse function of ASC."
 	},
@@ -188,10 +195,10 @@
 		],
 		"description": "Used for management of BASIC variables, arrays and strings. The runtime stack pointers, and the table of open channels is reset. After executing CLR all variables and arrays will be undeclared."
 	},	
-	"clrbit": {
-		"prefix": "clrbit",
+	"clr bit": {
+		"prefix": "clr bit",
 		"body": [
-			"clrbit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
+			"clr bit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
 		],
 		"description": "Clears (resets) a single bit at the memory address. The bit number is a value in the range of 0-7."
 	},	
@@ -240,7 +247,7 @@
 	"copy": {
 		"prefix": "copy",
 		"body": [
-			"copy ${1:<SOURCE>}${2:,d${3:<DRIVE>}} to ${4:<TARGET>}${5:,u${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
+			"copy ${1:<SOURCE>}${2:,d${3:<DRIVE>}} to ${4:<TARGET>}${5:,d${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
 		],
 		"description": "Copies the contents of source to target. It is used to copy either single files or, by using wildcard characters, multiple files."
 	},				
@@ -282,7 +289,7 @@
 	"dclose#":{
 		"prefix": "dclose#",
 		"body": [
-			"dclose# ${1:<CHANNEL NUMBER>}$0"
+			"dclose#${1:<CHANNEL NUMBER>}$0"
 		],
 		"description":"Closes a single file or all files for the specified unit. DCLOSE is used either with a channel argument or a unit number, but never both."
 	},
@@ -300,8 +307,8 @@
 		],
 		"description":"Returns the decimal value of the argument, that is written as a hex string."
 	},						
-	"def":{
-		"prefix": "def",
+	"def fn":{
+		"prefix": "def fn",
 		"body": [
 			"def fn ${1:<FUNCTION NAME>}(${2:<PARAMETER NAME>})=${3:<MATHEMATICAL EXPRESSION>}$0"
 		],
@@ -324,14 +331,14 @@
 	"dir": {
 		"prefix": "dir",
 		"body": [
-			"dir ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+			"dir ${1:<FILEPATTERN>}${2:,w}${3:,r}${4:,d${5:<DRIVE>}}${6:,u${7:<UNIT>}}$0"
 		],
 		"description": "Prints a file directory/catalog of the specified disk."
 	},
 	"directory": {
 		"prefix": "directory",
 		"body": [
-			"directory ${1:<FILEPATTERN>}${2:, w}${3:, r}${4:, d${5:<DRIVE>}}${6:, u${7:<UNIT>}}$0"
+			"directory ${1:<FILEPATTERN>}${2:,w}${3:,r}${4:,d${5:<DRIVE>}}${6:,u${7:<UNIT>}}$0"
 		],
 		"description": "Prints a file directory/catalog of the specified disk."
 	},
@@ -409,7 +416,7 @@
 		],
 		"description": "DS holds the status of the last disk operation."
 	},
-	"ds$": {
+	"dsD": {
 		"prefix": "ds",
 		"body": [
 			"ds$"			
@@ -798,14 +805,21 @@
 		],
 		"description": "KEY ON switch on function key strings. The keys will send assigned strings if pressed. KEY OFF switch off function key strings. The keys will send their character code if pressed."
 	},
-	"keyLdSv": {
+	"keyLoad": {
 		"prefix": "key",
 		"body": [
-			"key ${1|load,save|} ${2:<FILENAME>}$0"
+			"key load ${1:<FILENAME>}$0"
 		],
 		"description": "KEY LOAD loads key definitions from file. KEY SAVE saves key definitions to file."
 	},
-	"keyNuSt": {
+	"keySave": {
+		"prefix": "key",
+		"body": [
+			"key save ${1:<FILENAME>}$0"
+		],
+		"description": "KEY LOAD loads key definitions from file. KEY SAVE saves key definitions to file."
+	},
+	"keyNumber": {
 		"prefix": "key",
 		"body": [
 			"key ${1:<NUMBER>},${2:<STRING>}$0"
@@ -941,7 +955,7 @@
 	"mod": {
 		"prefix": "mod",
 		"body": [
-			"mod(${1:<DIVIDEND>},${2:<DIVIDEND>})$0"
+			"mod(${1:<DIVIDEND>},${2:<DIVISOR>})$0"
 		],
 		"description": "The MOD function returns the remainder of the division."
 	},
@@ -1446,10 +1460,10 @@
 		],
 		"description": "SET VERIFY enables or disables the DOS verify-after-write mode for 3.5 drives."
 	},
-	"setbit": {
-		"prefix": "setbit",
+	"set bit": {
+		"prefix": "set bit",
 		"body": [
-			"setbit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
+			"set bit ${1:<MEMORY ADDRESS>},${2:<BIT NUMBER>}$0"
 		],
 		"description": "Sets a single bit at the address. The bit number is a value in the range of 0-7."
 	},		
@@ -1484,9 +1498,9 @@
 	"spc": {
 		"prefix": "spc",
 		"body": [
-			"spc(${1:<integer>})$0"
+			"spc(${1:<COLUMNS>})$0"
 		],
-		"description": "SPC can be used to set a number of spaces."
+		"description": "Skips columns. The effect is similar to pressing → <column> times."
 	},
 	"speed": {
 		"prefix": "speed",
@@ -1601,7 +1615,7 @@
 		"description": "TI is a high precision timer with a resolution of 1 micro second. It is started or reset with CLR TI, and can be accessed in the same way as any other variable in expressions."
 	},
 	"ti$": {
-		"prefix": "ti",
+		"prefix": "ti$",
 		"body": [
 			"ti$"
 		],
