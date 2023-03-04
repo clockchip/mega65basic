@@ -69,7 +69,7 @@
 		"special": {
 			"patterns": [{
 				"name": "storage.modifier.mega65basic",
-				"match": "(foreground|freezer)"
+				"match": "(foreground|freezer|dot)"
 			}]
 		},	
 		"vardefs": {
@@ -93,7 +93,7 @@
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
+				"match": "(box|chardef|char|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
 			}]
 		},		
 		"graphics": {
