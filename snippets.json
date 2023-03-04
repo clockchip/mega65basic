@@ -388,6 +388,13 @@
 		],
 		"description": "Opens a file for reading or writing."
 	},
+	"dot": {
+		"prefix": "dot",
+		"body": [
+			"dot ${1:<X POS>},${2:<Y POS>}${3:,${4:<COLOUR>}}$0"			
+		],
+		"description": "Draws a pixel at screen coordinates x and y. The optional third parameter defines the colour to be used. If not specified, the current pen colour will be used."
+	},
 	"dpat": {
 		"prefix": "dpat",
 		"body": [
@@ -416,12 +423,96 @@
 		],
 		"description": "The BASIC command DISK SAVE saves the BASIC program to a file of type PRG."
 	},
-	"dot": {
-		"prefix": "dot",
+	"dt$": {
+		"prefix": "dt$",
 		"body": [
-			"dot ${1:<X POS>},${2:<Y POS>}${3:,${4:<COLOUR>}}$0"			
+			"dt$"			
 		],
-		"description": "Draws a pixel at screen coordinates x and y. The optional third parameter defines the colour to be used. If not specified, the current pen colour will be used."
+		"description": "DT$ holds the current date and is updated before each usage from the RTC (Real-Time Clock). The string DT$ is formatted as: ”DD-MON-YYYY”."
+	},
+	"dverify": {
+		"prefix": "dverify",
+		"body": [
+			"dverify ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "The BASIC command DISK VERIFY compares the BASIC program in memory with a disk file of type PRG."
+	},
+	"edit": {
+		"prefix": "edit",
+		"body": [
+			"edit ${1|on,off|}$0"			
+		],
+		"description": "EDIT switches the built-in editor either to text mode with EDIT ON, or to the BASIC program editor withEDIT OFF."
+	},
+	"edma": {
+		"prefix": "edma",
+		"body": [
+			"edma ${1:<COMMAND>},${2:<LENGHT>},${3:<SOURCE>},${4:<TARGET>}${5:,${6:<SUB COMMAND>},${7:<MODIFIER>}}$0"
+		],
+		"description": "EDMA (”Extended Direct Memory Access”) is the fastest method to manipulate memory areas using the DMA controller."
+	},
+	"el": {
+		"prefix": "el",
+		"body": [
+			"el"			
+		],
+		"description": "EL has the value of the line where the most recent BASIC error occurred, or the value -1 if there was no error."
+	},
+	"ellipse": {
+		"prefix": "ellipse",
+		"body": [
+			"ellipse ${1:<X CENTER>},${2:<Y CENTER>},${3:<X RADIUS>},${4:<Y RADIUS>}${5:,${6:<FLAGS>},${7:<START ANGLE>},${8:<STOP ANGLE>}}$0"
+		],
+		"description": "Draws an ellipse."
+	},
+	"else": {
+		"prefix": "else",
+		"body": [
+			"else"			
+		],
+		"description": "ELSE is an optional part of an IF statement."
+	},
+	"end": {
+		"prefix": "end",
+		"body": [
+			"end"			
+		],
+		"description": "Ends the execution of the BASIC program. The READY. prompt appears and the computer goes into direct mode waiting for keyboard input."
+	},
+	"envelope": {
+		"prefix": "envelope",
+		"body": [
+			"envelope ${1:<ENVELOPE SLOT>}${2:,${3:<ATTACK>},${4:<DECAY>},${5:<SUSTAIN>},${6:<RELEASE>},${7:<WAVEFORM>},${8:<PULSE>}}$0"			
+		],
+		"description": "Used to define the parameters for the synthesis of a musical instrument."
+	},
+	"er": {
+		"prefix": "er",
+		"body": [
+			"er"			
+		],
+		"description": "ER has the value of the most recent BASIC error that has occurred, or -1 if there was no error."
+	},
+	"erase": {
+		"prefix": "erase",
+		"body": [
+			"erase ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}${6:,r}}$0"
+		],
+		"description": "Used to erase a disk file."
+	},
+	"err$": {
+		"prefix": "err$",
+		"body": [
+			"err$(${1:<NUMBER>})$0"			
+		],
+		"description": "Used to convert an error number to an error string."
+	},
+	"exit": {
+		"prefix": "exit",
+		"body": [
+			"exit"			
+		],
+		"description": "Exits the current DO .. LOOP and continues execution at the first statement after LOOP."
 	},
 	"exp": {
 		"prefix": "exp",
@@ -429,6 +520,41 @@
 			"exp(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "The EXP (EXPonential function) computes the value of the mathematical constant Euler’s number (2.71828183) raised to the power of the argument."
+	},
+	"fast": {
+		"prefix": "fast",
+		"body": [
+			"fast ${1:<SPEED>}$0"			
+		],
+		"description": "Set CPU clock to 1MHz, 3.5MHz or 40MHz."
+	},
+	"fgosub": {
+		"prefix": "fgosub",
+		"body": [
+			"fgosub ${1:<NUMERIC EXPRESSION>}$0"
+		],
+		"description": "Evaluates the given numeric expression, then calls (GOSUBs) the subroutine at the resulting line number."
+	},
+	"fgoto": {
+		"prefix": "fgoto",
+		"body": [
+			"fgoto ${1:<NUMERIC EXPRESSION>}$0"
+		],
+		"description": "Evaluates the given numeric expression, then jumps (GOesTO) to the resulting line number."
+	},
+	"filter": {
+		"prefix": "filter",
+		"body": [
+			"filter ${1:<SID>}${2:,${3:<FREQ>},${4:<LOW PASS>},${5:<BAND PASS>},${6:<HIGH PASS>},${7:<RESONANCE>}}$0"			
+		],
+		"description": "Sets the parameters for a SID sound filter."
+	},
+	"font":{
+		"prefix": "font",
+		"body": [
+			"font ${1|a,b,c|}$0"
+		],
+		"description":"FONT is used to switch between fonts, and the code pages PETSCII, and enhanced PETSCII."
 	},
 	"fn":{
 		"prefix": "fn",
@@ -476,12 +602,47 @@
 		],
 		"description": "Sets the foreground colour (text colour) of the screen to the argument, which must be in the range of 0 to 31."
 	},	
+	"format": {
+		"prefix": "format",
+		"body": [
+			"format ${1:<DISKNAME>}${2:,i${3:<id>}}${4:,d${5:<DRIVE>}}${6:,u${7:<UNIT>}}$0"
+		],
+		"description": "Used to format (or clear) a disk."
+	},
 	"fre": {
 		"prefix": "fre",
 		"body": [
 			"fre(${1:<BANK NUMBER>})$0"
 		],
 		"description": "Returns the number of free bytes for banks 0 or 1, or the ROM version if the argument is negative."
+	},
+	"fread#": {
+		"prefix": "fread#",
+		"body": [
+			"fread#${1:<CHANNEL>},${2:<POINTER>},${3:<SIZE>}$0"
+		],
+		"description": "Reads size bytes from channel to memory starting at the 32-bit address pointer."
+	},
+	"freezer": {
+		"prefix": "freezer",
+		"body": [
+			"freezer"
+		],
+		"description": "Calling FREEZER via BASIC command is an alternative to the keypress of RESTORE ."
+	},
+	"fwrite#": {
+		"prefix": "fwrite#",
+		"body": [
+			"fwrite#${1:<CHANNEL>},${2:<POINTER>},${3:<SIZE>}$0"
+		],
+		"description": "Writes size bytes to channel from memory starting at the 32-bit address pointer."
+	},
+	"gcopy": {
+		"prefix": "gcopy",
+		"body": [
+			"gcopy ${1:<X POS>},${2:<Y POS>},${3:<WIDTH>},${4:<HEIGHT>}$0"
+		],
+		"description": "GCOPY is used on graphic screens and copies the content of the specified rectangle with upper left position x, y and the width and height to the cut/copy/paste buffer."
 	},
 	"get": {
 		"prefix": "get",
@@ -532,6 +693,13 @@
 		],
 		"description": "Initialises the BASIC graphic system. It clears the graphics memory and screen, and sets all parameters of the graphics context to their default values."
 	},
+	"header": {
+		"prefix": "header",
+		"body": [
+			"header ${1:<DISKNAME>}${2:,i${3:<id>}}${4:,d${5:<DRIVE>}}${6:,u${7:<UNIT>}}$0"
+		],
+		"description": "Used to format (or clear) a disk."
+	},
 	"help": {
 		"prefix": "help",
 		"body": [
@@ -539,13 +707,27 @@
 		],
 		"description": "When the BASIC program stops due to an error, HELP can be used to gain further information."
 	},
-	"hex$": {
-		"prefix": "hex$",
+	"highlight": {
+		"prefix": "highlight",
 		"body": [
-			"hex$(${1:<NUMERIC EXPRESSION>})$0"
+			"highlight ${1:<COLOUR>}${2:,${3:<MODE>}}$0"
 		],
-		"description": "Returns a four character hexadecimal representation of the argument."
-	},			
+		"description": "Sets the colours used for highlighting. Different colours can be set for system messages, REM statements and BASIC 65 keywords."
+	},
+	"import": {
+		"prefix": "import",
+		"body": [
+			"import ${1:<FILENAME>}${2:,d${3:<DRIVE>}}${4:,u${5:<UNIT>}}$0"
+		],
+		"description": "The IMPORT command loads a BASIC program in text format and type SEQ into memory reserved for BASIC programs."
+	},
+	"info": {
+		"prefix": "info",
+		"body": [
+			"info"
+		],
+		"description": "INFO gibt eine Übersicht einiger Systemwerte und des belegten und freien Speichers des aktuellen BASIC 65-Programms aus."
+	},				
 	"ifThen": {
 		"prefix": "if",
 		"body": [
@@ -581,12 +763,54 @@
 		],
 		"description": "The BASIC command INPUT# is used for reading data from a file stored on peripheral device media such as disk or tape."
 	},
+	"instr": {
+		"prefix": "instr",
+		"body": [
+			"instr(${1:<HAYSTACK>},${2:<NEEDLE>}${3:,${4:<START>}})$0"
+		],
+		"description": "Locates the position of the string expression needle in the string expression haystack, and returns the index of the first occurrence, or zero if there is no match."
+	},
 	"int": {
 		"prefix": "int",
 		"body": [
 			"int(${1:<NUMERIC EXPRESSION>})$0"
 		],
 		"description": "INT returns the integer part of the argument. This function is NOT limited to the typical 16-bit integer range (-32768 to 32767), as it uses real arithmetic."
+	},
+	"joy": {
+		"prefix": "joy",
+		"body": [
+			"joy(${1:<PORT>})$0"
+		],
+		"description": "Returns the state of the joystick for the selected controller port (1 or 2). Bit 7 contains the state of the fire button."
+	},
+	"key": {
+		"prefix": "key",
+		"body": [
+			"key"
+		],
+		"description": "Reads the state of the function keys and lists the current assignments."
+	},
+	"keyOnOff": {
+		"prefix": "key",
+		"body": [
+			"key ${1|on,off|}$0"
+		],
+		"description": "KEY ON switch on function key strings. The keys will send assigned strings if pressed. KEY OFF switch off function key strings. The keys will send their character code if pressed."
+	},
+	"keyLdSv": {
+		"prefix": "key",
+		"body": [
+			"key ${1|load,save|} ${2:<FILENAME>}$0"
+		],
+		"description": "KEY LOAD loads key definitions from file. KEY SAVE saves key definitions to file."
+	},
+	"keyNuSt": {
+		"prefix": "key",
+		"body": [
+			"key ${1:<NUMBER>},${2:<STRING>}$0"
+		],
+		"description": "KEY number, string assigns the string to the key with the given number."
 	},
 	"left$": {
 		"prefix": "left$",
@@ -615,6 +839,13 @@
 			"line ${1:<X BEGIN>},${2:<Y BEGIN>}${3:,${4:<X NEXT>},${5:<Y NEXT>}}$0"
 		],
 		"description": "Draws a pixel at (X BEGIN/Y BEGIN), if only one coordinate pair is given. If more than one pair is defined, a line is drawn on the current graphics screen from the coordinate to the next coordinate pair(s)."
+	},
+	"lineInput#": {
+		"prefix": "input#",
+		"body": [
+			"line input#${1:<CHANNEL NUMBER>},${2:<VARIABLE>}$0"
+		],
+		"description": "Reads one record per variable from an input device, (such as a disk drive) and assigns the read data to the variable."
 	},	
 	"listFile": {
 		"prefix": "list",

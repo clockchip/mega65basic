@@ -78,31 +78,31 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|dsave|ds|dt$|go64|help|input#|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
+				"match": "(append#|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|copy|catalog|clrbit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|ds|dverify|edit|edma|ellipse|else|el|end|erase|er|fast|format|fread#|fwrite#|go64|header|highlight|help|input#|import|info|instr|joy|key|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|setbit|set|saveiff|save|sys|disk|def|type|unlock|using|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
 			"patterns": [{
 				"name": "keyword.draw.mega65basic",
-				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon)"
+				"match": "(box|chardef|char|dot|dpat|rpen|lpen|pen|paint|line|circle|cursor on|cursor off|polygon|dsave)"
 			}]
 		},		
 		"graphics": {
 			"patterns": [{
 				"name": "keyword.graphics.mega65basic",
-				"match": "(background|border|bump|rspcolor|color|collision|cut|foreground|load iff|movspr|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|rsprite|sprite|sprsav|rsppos|pixel|rpalette|palette|paste|rcolor|rcursor|rgraphic|viewport clr|viewport def|vsync|rwindow|window)"
+				"match": "(background|border|bump|rspcolor|color|collision|cut|foreground|font|load iff|movspr|graphic clr|graphic|scnclr|screen|sprcolor|sprite clr|sprite load|sprite sav|sprsav|rsprite|sprite|sprsav|rsppos|pixel|rpalette|palette|paste|rcolor|rcursor|rgraphic|viewport clr|viewport def|vsync|rwindow|window)"
 			}]
 		},
 		"sound": {
 			"patterns": [{
 				"name": "keyword.sound.mega65basic",
-				"match": "(sound|rplay|play|tempo|vol)"
+				"match": "(envelope|filter|sound|rplay|play|tempo|vol)"
 			}]
 		},	
 		"control": {
 			"patterns": [{
 				"name": "keyword.control.mega65basic",
-		    	"match": "(begin|bend|do|end|else|exit|for|gosub|goto|if|loop|next|return|step|stop|then|to|while|until)"
+		    	"match": "(begin|bend|do|end|else|exit|for|fgosub|gosub|fgoto|goto|if|loop|next|return|step|stop|then|to|while|until)"
 			}]
 		},			
 		"other": {
@@ -114,7 +114,7 @@
 		"otherString": {
 			"patterns": [{
 				"name": "keyword.otherString.mega65basic",
-		    	"begin": "(chr|ds|left|mid|right|str|ti|hex)",
+		    	"begin": "(chr|ds|dt|err|left|mid|right|str|ti|hex)",
 				"end": "\\$"
 			}]
 		},
