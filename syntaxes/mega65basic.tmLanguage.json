@@ -87,7 +87,7 @@
 		"dos": {
 			"patterns": [{
 				"name": "keyword.dos.mega65basic",
-				"match": "(append#|append|backup|bank|bload|bsave|bverify|boot|chdir|close|cmd|collect|concat|cont|gcopy|copy|catalog|clr bit|clr|directory|dir|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|dsave|ds\\$|ds|dverify|edit|edma|ellipse|else|el|end|erase|er|fast|format|fread#|fwrite#|go64|header|highlight|help|input#|import|info|instr|joy|key|line input#|lock|mem|merge|mkdir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|set bit|set|bit|saveiff|save|sys|disk|def fn|fn|def|type|unlock|using|verify|wpeek|wpoke)"
+				"match": "(append#|append|backup|bank|bload|bsave|bverify|boot|close|cmd|collect|concat|cont|gcopy|copy|catalog|clr bit|clr|disk|dclear|dclose#|dclose|delete|dload|dmode|dopen#|dsave|ds\\$|ds|dverify|edit|edma|ellipse|else|el|end|erase|er|fast|format|fread#|fwrite#|go64|header|highlight|help|input#|import|info|instr|joy|key|line input#|lock|mem|merge|directory|chdir|mkdir|dir|monitor|mount|new restore|new|open|peek|poke|pot|pointer|print#|record#|rename|resume|rmouse|mouse on|mouse off|rreg|scratch|set bit|set|bit|saveiff|save|sys|disk|def fn|fn|def|type|unlock|using|verify|wpeek|wpoke)"
 			}]	
 		},		
 		"draw": {
