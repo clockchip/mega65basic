@@ -233,7 +233,7 @@
 	"concat": {
 		"prefix": "concat",
 		"body": [
-			"concat ${1:<APPENDFILE>}${2:,d${3:<DRIVE>}} to ${4:<TARGETFILE>}${5:,u${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
+			"concat ${1:<APPENDFILE>}${2:,d${3:<DRIVE>}} to ${4:<TARGETFILE>}${5:,d${6:<DRIVE>}}${7:,u${8:<UNIT>}}$0"
 		],
 		"description": "CONCAT appends the contents of appendfile to the targetfile. Afterwards, targetfile contains the contents of both files, while appendfile remains unchanged."
 	},
@@ -416,8 +416,8 @@
 		],
 		"description": "DS holds the status of the last disk operation."
 	},
-	"dsD": {
-		"prefix": "ds",
+	"ds$": {
+		"prefix": "ds$",
 		"body": [
 			"ds$"			
 		],
@@ -714,6 +714,13 @@
 		],
 		"description": "When the BASIC program stops due to an error, HELP can be used to gain further information."
 	},
+	"hex$": {
+		"prefix": "hex$",
+		"body": [
+			"hex$(${1:<NUMERIC EXPRESSION>})$0"
+		],
+		"description": "Returns a four character hexadecimal representation of the argument."
+	},
 	"highlight": {
 		"prefix": "highlight",
 		"body": [
@@ -878,7 +885,7 @@
 	"load": {
 		"prefix": "load",
 		"body": [
-			"load ${1:<FILENAME>}${2:,u${3:<UNIT>}${4:,${5:<FLAG>}}}$0"
+			"load ${1:<FILENAME>}${2:,${3:<UNIT>}${4:,${5:<FLAG>}}}$0"
 		],
 		"description": "The BASIC command LOAD loads a file of type PRG into memory reserved for BASIC programs."
 	},
@@ -987,12 +994,19 @@
 		],
 		"description": "MOUSE OFF disables the mouse driver and frees the associated sprite."
 	},
-	"movspr": {
+	"movsprPos": {
 		"prefix": "movspr",
 		"body": [
-			"movspr ${1:<NUMBER>},${2:<POSITION>}$0"
+			"movspr ${1:<NUMBER>},${2:<X POS>},${3:<Y POS>}$0"
 		],
 		"description": "Moves a sprite on screen. Each position argument consists of two 16-bit values, which specify either an absolute coordinate, a relative coordinate, an angle, or a speed."
+	},
+	"movsprStartEnd": {
+		"prefix": "movspr",
+		"body": [
+			"movspr ${1:<NUMBER>},${2:<START X POS>},${3:<START Y POS>} to ,${4:<END X POS>},${5:<END Y POS>},${6:<ANGLE>}#${7:<SPEED>}$0"
+		],
+		"description": "Places the sprite at the start position, defines the destination position, and the speed of movement."
 	},
 	"new": {
 		"prefix": "new",
@@ -1316,7 +1330,7 @@
 	"rreg": {
 		"prefix": "rreg",
 		"body": [
-			"rreg ${1:<A REG>},${2:<X REG>},${3:<Y REG>},${4:<Z REG>},${5:<S REG>},$0"
+			"rreg ${1:<A REG>},${2:<X REG>},${3:<Y REG>},${4:<Z REG>},${5:<S REG>}$0"
 		],
 		"description": "Reads the values that were in the CPU registers after a SYS call, into the specified variables."
 	},
@@ -1620,7 +1634,14 @@
 			"ti$"
 		],
 		"description": "TI$ stores the time information of the RTC (Real-Time Clock) in text form, using the format: ”hh:mm:ss”. It is updated with every use."
-	},			
+	},
+	"to": {
+		"prefix": "to",
+		"body": [
+			"to"
+		],
+		"description": "TO is a secondary keyword used in combination with primary keywords, such as BACKUP, BSAVE, CHANGE, CONCAT, COPY, FOR, GO, RENAME, and SET DISK"
+	},				
 	"trap": {
 		"prefix": "trap",
 		"body": [
@@ -1743,7 +1764,7 @@
 	"wpeek": {
 		"prefix": "wpeek",
 		"body": [
-			"wpeek ${1:<MEMORY ADDRESS>}$0"
+			"wpeek (${1:<MEMORY ADDRESS>})$0"
 		],
 		"description": "Returns an unsigned 16-bit value (word) read from address (low byte) and address+1 (high byte)."
 	},
