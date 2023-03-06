@@ -28,23 +28,26 @@ To use the latest version of petcat with Mega65 Basic command support, simply [d
 ## Usage
 
 You might follow this process to develop your program:
-1. create a folder structure like this:
+1. Create a folder structure like this:
 
         \    -> root dir
         \bin -> converted programs
         \src -> source programs
 
-2. write the program; 
-3. tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
+2. Write the program in VSCode.
+3. Tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
         
         petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
 
-4. test it with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command;
+4. Test the program with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command.
 
 ![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
 
 5. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
-6. Transfer the output.prg file to a disk on your MEGA65 by using the "mega65_ftp" command;
+6. Transfer the output.prg file to the MEGA65 using the etherload command from the MEGA54 Tools:
+
+        etherload -i 192.168.1.255 -r outputfile.prg
+
 7. run it on the real MEGA65 hardware.
 
 ## Features
@@ -52,11 +55,10 @@ You might follow this process to develop your program:
 The provided features are:
 
 - Syntax highlighting
-- Snippets for the all commands and control characters
+- Snippets for all commands and control characters
 - File icons
-- Theme
+- Themes
 - Rulers: 40th and 80th column
-- Keyboard Shortcuts
 
 ### Syntax highlighting
 An example of syntax highlighting is:
