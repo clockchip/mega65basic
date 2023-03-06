@@ -43,10 +43,13 @@ You might follow this process to develop your program:
 
 ![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
 
-5. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
-6. Transfer the output.prg file to the MEGA65 using the etherload command from the MEGA54 Tools:
+5. Connect your MEGA65 to the same network where the computer is connected which is running the MEGA65 Tools;
+6. Transfer the output.prg file to the MEGA65 using the etherload command from the MEGA65 Tools:
 
         etherload.osx -i 192.168.1.255 -r ./bin/outputfile.prg
+
+        Typically, the broadcast IP is your local IP address with .255 as the last number. 
+        For example, if your local IP is 192.168.1.77, then your broadcast address will very likely be 192.168.1.255 
 
 7. run it on the real MEGA65 hardware.
 
