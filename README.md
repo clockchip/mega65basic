@@ -48,10 +48,10 @@ You might follow this process to develop your program:
 
         etherload.osx -i 192.168.1.255 -r ./bin/outputfile.prg
 
-        Typically, the broadcast IP is your local IP address with .255 as the last number. 
-        For example, if your local IP is 192.168.1.77, then your broadcast address will very likely be 192.168.1.255 
+Typically, the broadcast IP is your local IP address with .255 as the last number. 
+For example, if your local IP is 192.168.1.77, then your broadcast address will very likely be 192.168.1.255 
 
-7. run it on the real MEGA65 hardware.
+7. Run your programm on the real MEGA65 hardware.
 
 ## Features
 
