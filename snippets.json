@@ -2175,7 +2175,7 @@
 		"description": "Select the lowercase/uppercase character set."
 	},
 	"{ctrl+/}": {
-		"prefix": "{ctrl+/}",
+		"prefix": "{ctrl+/}", 
 		"body": [
 			"chr$(149)$0"
 		],
