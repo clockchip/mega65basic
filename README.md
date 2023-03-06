@@ -104,7 +104,6 @@ An alternative option is to use petcat to directly write the following Control c
 {f1}                {f2}                {f3}            {f4}                {f5}                {f6}
 {f7}                {f8}                {space}         {pi}
 
-[petcat src](https://github.com/svn2github/vice-emu/blob/524c58c4c2159dbe82520d36b7dde6a082eeddf7/vice/src/petcat.c#L683)
 
 ## Release Notes
 
