@@ -46,7 +46,7 @@ You might follow this process to develop your program:
 5. Connect your MEGA65 with the computer which is running the MEGA65 Tools;
 6. Transfer the output.prg file to the MEGA65 using the etherload command from the MEGA54 Tools:
 
-        etherload -i 192.168.1.255 -r outputfile.prg
+        etherload.osx -i 192.168.1.255 -r ./bin/outputfile.prg
 
 7. run it on the real MEGA65 hardware.
 
