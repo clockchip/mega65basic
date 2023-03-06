@@ -12,6 +12,8 @@ Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
 - [MEGA65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
 
+## Things you need
+
 To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
 - [petcat tool from VICE Emulator](https://vice-emu.sourceforge.io/)
 - [Xemu](https://github.lgb.hu/xemu/)
@@ -22,6 +24,8 @@ For using the petcat tool from the VICE emulator to tokenize your VSCode code, i
 To use the latest version of petcat with Mega65 Basic command support, simply [download](https://github.com/VICE-Team/svn-mirror/blob/main/vice/src/tools/petcat/petcat.c) and compile the most recent version of the tool. The following picture displays the code lines of the petcat.c file, highlighting the added support for Mega65 Basic commands.
 
 ![petcat.c code](https://github.com/clockchip/mega65basic/blob/main/images/petcat.png)
+
+## Usage
 
 You might follow this process to develop your program:
 1. create a folder structure like this:
