@@ -19,7 +19,7 @@ To transfer and execute the code written using this extension to your MEGA65, yo
 - [Xemu](https://github.lgb.hu/xemu/)
 - [MEGA65 Tools](https://github.com/MEGA65/mega65-tools)
 
-For using the petcat tool from the VICE emulator to tokenize your VSCode code, it is important to use a version that includes the latest support for Mega65 Basic commands. This will ensure that your programs are fully compatible with your Mega65 system.
+For using the petcat tool from the VICE emulator to tokenize your BASIC program written in VSCode, it is important to use a version that includes the latest support for Mega65 Basic commands. This will ensure that your programs are fully compatible with your Mega65 system.
 
 To use the latest version of petcat with Mega65 Basic command support, simply [download](https://github.com/VICE-Team/svn-mirror/blob/main/vice/src/tools/petcat/petcat.c) and compile the most recent version of the tool. The following picture displays the code lines of the petcat.c file, highlighting the added support for Mega65 Basic commands.
 
