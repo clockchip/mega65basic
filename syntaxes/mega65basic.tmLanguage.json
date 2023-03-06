@@ -130,7 +130,7 @@
 		"operators": {
 			"patterns": [{
 				"name": "keyword.operator.mega65basic",
-				"match": "(\\*|/|\\+|-|\\^|=|<>|<|>|<=|=<|>=|=>|and|or|not|xor)"
+				"match": "(\\*|/|\\+|-|\\^|=|<>|<|>|<=|=<|>=|=>|<<|>>|and|or|not|xor)"
 			}]
 		},		
 		"strings": {
