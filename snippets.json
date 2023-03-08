@@ -28,7 +28,7 @@
 		"description": "Takes the first character of the string argument and returns its numeric code value. The name was apparently chosen to be a mnemonic to ASCII, but the returned value is in fact the so-called PETSCII code."
 	},
 	"atn": {
-		"prefix": "atn",
+		"prefix": "atn", 
 		"body": [
 			"atn(${1:<NUMERIC EXPRESSION>})$0"
 		],
