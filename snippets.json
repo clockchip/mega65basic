@@ -41,14 +41,14 @@
 		],
 		"description": "Sets the background colour of the screen to the argument, which must be in the range of 0 to 255."
 	},
-	"backupU": {
+	"backupUnit": {
 		"prefix": "backup",
 		"body": [
 			"backup u${1|8,9|} to u${2|9,8|}$0"
 		],
 		"description": "The first form of BACKUP, specifying units for source and target can only be used for the drives connected to the internal FDC (Floppy Disk Controller). Units 8 and 9 are reserved for this controller."
 	},
-	"backupD": {
+	"backupDevice": {
 		"prefix": "backup",
 		"body": [
 			"backup d${1|0,1|} to d${2|1,0|}${3:,u${4:<UNIT>}}$0"
@@ -379,7 +379,7 @@
 		],
 		"description": "DO and LOOP define the start of a BASIC loop. Using DO and LOOP alone without any modifiers creates an infinite loop, which can only be exited by the EXIT statement."
 	},
-	"doAdv": {
+	"doAdvanced": {
 		"prefix": "do",
 		"body": [
 			"do ${1:${2|until,while|} ${3:<LOGICAL EXPRESSION>}}",
@@ -1078,14 +1078,14 @@
 		],
 		"description": "PALETTE can be used to change an entry of the system colour palette, or the palette of a screen. "
 	},
-	"paletteCol": {
+	"paletteColor": {
 		"prefix": "palette",
 		"body": [
 			"palette color ${1:<COLOUR>},${2:<RED>},${3:<GREEN>},${4:<BLUE>}$0"
 		],
 		"description": "COLOR keyword for changing system palette. "
 	},	
-	"paletteRes": {
+	"paletteRestore": {
 		"prefix": "palette",
 		"body": [
 			"palette restore$0"
