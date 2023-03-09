@@ -43,11 +43,11 @@ You might follow this process to develop your program:
 
 ![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
 
-5. Connect your MEGA65 using [JTAG](https://dansanderson.com/mega65/welcome/using-jtag.html) connector to the computer is connected which is running the M65Connect.
+5. Connect your MEGA65 using a [JTAG](https://dansanderson.com/mega65/welcome/using-jtag.html) connector to the computer which is running the M65Connect.
 
 6. Transfer the output.prg file to the MEGA65 using M65Connect.
 
-7. Run your programm on the real MEGA65 hardware.
+7. Enjoy running your programm on the real MEGA65 hardware.
 
 ## Features
 
