@@ -20,7 +20,11 @@
     "basic language",
     "commodore",
     "pet"
-  ],  
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clockchip/mega65basic"
+  },  
   "contributes": {
     "themes": [
       {
