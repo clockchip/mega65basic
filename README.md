@@ -2,6 +2,15 @@
 
 # MEGA65 BASIC Language VSCode Extension
 
+## Epilog
+Welcome to my GitHub project! In this repository, you will find a Visual Studio Code language extension for the BASIC of the MEGA65 Personal Computer System. I must admit, this computer has a lot of charm, and the team that developed it has done a fantastic job.
+
+For many developers, it may be sacrilege not to program directly on the hardware, despite the perfect keyboard that the MEGA65 offers. However, there are many developers who are used to modern development environments and want to take advantage of Visual Studio Code's benefits. That's why I decided to write this extension, to enable comfortable development of BASIC programs and, at the same time, to utilize the many features of Visual Studio Code for managing source code.
+
+I see this as another contribution to helping the MEGA65 get additional software, as development environments make software writing easier. I hope this extension will be useful for those of you who use the MEGA65 and want to develop your BASIC programs in Visual Studio Code. Thank you for your interest!
+
+## Honorable mentions
+
 This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within [Visual Studio Code](https://code.visualstudio.com/). It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
 
 This extension is developed using the code and tools available in the following GitHub repositories:
