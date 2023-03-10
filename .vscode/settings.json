@@ -1,5 +1,5 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     // Turn off [abc] suggestions on vs-code
-    "editor.suggest.showWords": "off"
+    "editor.suggest.showWords": false
 }
