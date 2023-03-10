@@ -1,5 +1,7 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     // Turn off [abc] suggestions on vs-code
-    "editor.suggest.showWords": false
+    "editor.suggest.showWords": false,
+    // Select Theme
+    "workbench.colorTheme": "Visual Studio Dark - mega65basic"
 }
