@@ -3,5 +3,5 @@
     // Turn off [abc] suggestions on vs-code
     "editor.suggest.showWords": false,
     // Select Theme
-    "workbench.colorTheme": "Visual Studio Dark - mega65basic"
+    "workbench.colorTheme": "Visual Studio Light - mega65basic"
 }
