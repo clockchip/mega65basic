@@ -59,7 +59,7 @@
       "[mega65basic]": {
           "editor.rulers": [40, 80],
           "editor.suggest.showWords": false,
-          "workbench.colorTheme": "Visual Studio Light - mega65basic"
+          "workbench.colorTheme": "Light (Visual Studio - mega65basic)"
        }
       },
       "snippets": [
