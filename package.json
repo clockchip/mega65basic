@@ -1,7 +1,7 @@
 {
   "name": "mega65basic",
   "displayName": "MEGA65 BASIC 65",
-  "description": "Syntax highlighting and snippets for Mega65 Basic language",
+  "description": "Syntax highlighting and snippets for MEGA65 BASIC language",
   "publisher": "clockchip",
   "author": "clockchip",
   "version": "0.0.4",
