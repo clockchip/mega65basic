@@ -87,6 +87,28 @@ Snippets suggest to you the syntax of the commands:
 
 ![Command Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets2.gif)
 
+#### Using Syntax Suggestions and Optional Parameters
+
+When entering a BASIC command, you encounter syntax suggestions displayed on the screen. To ignore these suggestions enter the command and press the SPACE bar.
+
+![Usage1](https://github.com/clockchip/mega65basic/blob/main/images/circle1.gif)
+
+To select different parameters of a command, press the TAB key. This will allow you to cycle through and select the desired parameter for your command.
+
+![Usage2](https://github.com/clockchip/mega65basic/blob/main/images/circle2.gif)
+
+Some BASIC commands may have optional parameters.
+
+![Command](https://github.com/clockchip/mega65basic/blob/main/images/circle.png)
+
+f you do not want to use these optional parameters, simply delete them using the BACKSPACE key.
+
+![Usage3](https://github.com/clockchip/mega65basic/blob/main/images/circle3.gif)
+
+If you do want to use the optional parameters of a command, press TAB twice. This will allow you to enter and specify the desired parameter for your command.
+
+![Usage4](https://github.com/clockchip/mega65basic/blob/main/images/circle4.gif)
+
 ### Snippets for Control characters
 Special characters in MEGA65 BASIC are referred to as control characters, such as:
 
