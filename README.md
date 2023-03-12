@@ -85,8 +85,6 @@ Snippets suggest to you the syntax of the commands:
 
 ![REM Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets1.gif)
 
-![Command Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets2.gif)
-
 #### Using Syntax Suggestions and Optional Parameters
 
 When entering a BASIC command, you encounter syntax suggestions displayed on the screen. To ignore these suggestions enter the command and press the SPACE bar.
