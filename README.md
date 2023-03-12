@@ -43,7 +43,9 @@ You might follow this process to develop your program:
         \bin -> converted programs
         \src -> source programs
 
-2. Write the program in VSCode.
+2. Write the program in VSCode and save it under the \src folder.
+   Please remember to select one of the provided themes to ensure proper syntax highlighting.
+   
 3. Tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
         
         petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
