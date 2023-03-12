@@ -37,15 +37,19 @@ To use the latest version of petcat with Mega65 Basic command support, simply [d
 ## Usage
 
 You might follow this process to develop your program:
-1. Create a folder structure like this:
+
+1. Before you start coding select one of the provided themes to ensure proper syntax highlighting.
+
+![select theme](https://github.com/clockchip/mega65basic/blob/main/images/themeselect.png)
+
+2. Create a folder structure like this:
 
         \    -> root dir
         \bin -> converted programs
         \src -> source programs
-
-2. Write the program in VSCode and save it under the \src folder.
-   Please remember to select one of the provided themes to ensure proper syntax highlighting.
+3. Write the program in VSCode and save it under the \src folder.
    
+
 3. Tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
         
         petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
