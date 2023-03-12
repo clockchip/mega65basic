@@ -50,19 +50,19 @@ You might follow this process to develop your program:
 3. Write the program in VSCode and save it under the \src folder.
    
 
-3. Tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
+4. Tokenize and convert the source *.bas file into a *.prg file, by using the following command in the Terminal window of Visual Studio Code:
         
         petcat -w65 -o ./bin/outputfile.prg -- ./src/inputfile.bas
 
-4. Test the program with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command.
+5. Test the program with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command.
 
 ![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
 
-5. Connect your MEGA65 using a [JTAG](https://dansanderson.com/mega65/welcome/using-jtag.html) connector to the computer which is running the M65Connect.
+6. Connect your MEGA65 using a [JTAG](https://dansanderson.com/mega65/welcome/using-jtag.html) connector to the computer which is running the M65Connect.
 
-6. Transfer the output.prg file to the MEGA65 using M65Connect.
+7. Transfer the output.prg file to the MEGA65 using M65Connect.
 
-7. Enjoy running your programm on the real MEGA65 hardware.
+8. Enjoy running your programm on the real MEGA65 hardware.
 
 ## Features
 
