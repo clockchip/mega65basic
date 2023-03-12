@@ -26,7 +26,7 @@ Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
 To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
 - [petcat tool from VICE Emulator](https://vice-emu.sourceforge.io/)
 - [Xemu](https://github.lgb.hu/xemu/)
-- [MEGA65 Tools](https://github.com/MEGA65/mega65-tools)
+- [M65Connect](https://github.com/MEGA65/m65connect)
 
 For using the petcat tool from the VICE emulator to tokenize your BASIC program written in VSCode, it is important to use a version that includes the latest support for Mega65 Basic commands. This will ensure that your programs are fully compatible with your Mega65 system.
 
