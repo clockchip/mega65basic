@@ -4,7 +4,7 @@
   "description": "Syntax highlighting and snippets for MEGA65 BASIC language",
   "publisher": "clockchip",
   "author": "clockchip",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "BSD-3-Clause License",
   "engines": {
     "vscode": "^1.75.0"
