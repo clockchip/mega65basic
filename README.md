@@ -1,4 +1,4 @@
-![mega65basic logo](data:/images/mega65basic_logo.png)
+![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
 
 # MEGA65 BASIC Language VSCode Extension
 
@@ -20,16 +20,6 @@ Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
 - [MEGA65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
 
-### Project Features
-
-The provided features are:
-
-- Syntax highlighting
-- Snippets for all commands and control characters
-- File icons
-- Themes
-- Rulers: 40th and 80th column
-
 ## Things you need
 
 To transfer and execute the code written using this extension to your MEGA65, you will require the following tools:
@@ -41,7 +31,7 @@ For using the petcat tool from the VICE emulator to tokenize your BASIC program 
 
 To use the latest version of petcat with Mega65 Basic command support, simply [download](https://github.com/VICE-Team/svn-mirror/blob/main/vice/src/tools/petcat/petcat.c) and compile the most recent version of the tool. The following picture displays the code lines of the petcat.c file, highlighting the added support for Mega65 Basic commands.
 
-![petcat.c code](/images/petcat.png)
+![petcat.c code](https://github.com/clockchip/mega65basic/blob/main/images/petcat.png)
 
 ## Usage
 
@@ -49,7 +39,7 @@ You might follow this process to develop your program:
 
 1. Before you start coding select one of the provided themes to ensure proper syntax highlighting.
 
-![select theme](/images/themeselect.png)
+![select theme](https://github.com/clockchip/mega65basic/blob/main/images/themeselect.png)
 
 2. Create a folder structure like this:
 
@@ -73,12 +63,22 @@ You might follow this process to develop your program:
 
 8. Enjoy running your programm on the real MEGA65 hardware.
 
-## Syntax highlighting
+## Project Features
+
+The provided features are:
+
+- Syntax highlighting
+- Snippets for all commands and control characters
+- File icons
+- Themes
+- Rulers: 40th and 80th column
+
+### Syntax highlighting
 An example of syntax highlighting is:
 
 ![mega65basic highlighting](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_syntaxhigh.png)
 
-## Snippets
+### Snippets
 
 Snippets suggest to you the syntax of the commands:
 
