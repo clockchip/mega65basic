@@ -1,4 +1,4 @@
-![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
+![mega65basic logo](/images/mega65basic_logo.png)
 
 # MEGA65 BASIC Language VSCode Extension
 
@@ -32,7 +32,7 @@ For using the petcat tool from the VICE emulator to tokenize your BASIC program 
 
 To use the latest version of petcat with Mega65 Basic command support, simply [download](https://github.com/VICE-Team/svn-mirror/blob/main/vice/src/tools/petcat/petcat.c) and compile the most recent version of the tool. The following picture displays the code lines of the petcat.c file, highlighting the added support for Mega65 Basic commands.
 
-![petcat.c code](https://github.com/clockchip/mega65basic/blob/main/images/petcat.png)
+![petcat.c code](/images/petcat.png)
 
 ## Usage
 
@@ -40,7 +40,7 @@ You might follow this process to develop your program:
 
 1. Before you start coding select one of the provided themes to ensure proper syntax highlighting.
 
-![select theme](https://github.com/clockchip/mega65basic/blob/main/images/themeselect.png)
+![select theme](/images/themeselect.png)
 
 2. Create a folder structure like this:
 
