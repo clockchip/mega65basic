@@ -1,15 +1,14 @@
-![mega65basic logo](/images/mega65basic_logo.png)
+![mega65basic logo](data:/images/mega65basic_logo.png)
 
 # MEGA65 BASIC Language VSCode Extension
 
-## Epilog
 Welcome to my GitHub project! In this repository, you will find a Visual Studio Code language extension for the BASIC of the MEGA65 Personal Computer System. I must admit, this computer has a lot of charm, and the team that developed it has done a fantastic job.
 
 For many developers, it may be sacrilege not to program directly on the hardware, despite the perfect keyboard that the MEGA65 offers. However, there are many developers who are used to modern development environments and want to take advantage of Visual Studio Code's benefits. That's why I decided to write this extension, to enable comfortable development of BASIC programs and, at the same time, to utilize the many features of Visual Studio Code for managing source code.
 
-I see this as another contribution to helping the MEGA65 get additional software, as development environments make software writing easier. I hope this extension will be useful for those of you who use the MEGA65 and want to develop your BASIC programs in Visual Studio Code. Thank you for your interest!
+I see this as another contribution to helping the MEGA65 get additional software, as development environments make software writing easier. I hope this extension will be useful for those of you who use the MEGA65 and want to develop your BASIC programs in Visual Studio Code.
 
-## Honorable mentions
+## Project Description
 
 This extension helps with the creation of programs in "Basic 65 V920377" (.prg or .bas extension) for the "MEGA65 Personal Computer System" within [Visual Studio Code](https://code.visualstudio.com/). It offers a range of useful features, including syntax highlighting, code snippets, file icons, theme options, and rulers.
 
@@ -20,6 +19,16 @@ This extension is developed using the code and tools available in the following 
 Rules for snippets come from the following pages of C64-Wiki & Mega65 Filehost:
 - [MEGA65 BASIC 65 Reference](https://files.mega65.org/files/m/mega65-basic65-reference_PeK0ek.pdf) 
 - [Control character](https://www.c64-wiki.com/wiki/control_character) 
+
+### Project Features
+
+The provided features are:
+
+- Syntax highlighting
+- Snippets for all commands and control characters
+- File icons
+- Themes
+- Rulers: 40th and 80th column
 
 ## Things you need
 
@@ -64,28 +73,18 @@ You might follow this process to develop your program:
 
 8. Enjoy running your programm on the real MEGA65 hardware.
 
-## Features
-
-The provided features are:
-
-- Syntax highlighting
-- Snippets for all commands and control characters
-- File icons
-- Themes
-- Rulers: 40th and 80th column
-
-### Syntax highlighting
+## Syntax highlighting
 An example of syntax highlighting is:
 
 ![mega65basic highlighting](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_syntaxhigh.png)
 
-### Snippets
+## Snippets
 
 Snippets suggest to you the syntax of the commands:
 
 ![REM Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets1.gif)
 
-#### Using Syntax Suggestions and Optional Parameters
+### Using Syntax Suggestions and Optional Parameters
 
 When entering a BASIC command, you encounter syntax suggestions displayed on the screen. To ignore these suggestions enter the command and press the SPACE bar.
 
