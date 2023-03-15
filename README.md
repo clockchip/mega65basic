@@ -2,7 +2,7 @@
 
 # MEGA65 BASIC Language VSCode Extension
 
-Welcome to my GitHub project! In this repository, you will find a Visual Studio Code language extension for the BASIC of the MEGA65 Personal Computer System. I must admit, this computer has a lot of charm, and the team that developed it has done a fantastic job.
+Welcome to my GitHub project! In this repository, you will find a Visual Studio Code language extension for the BASIC of the MEGA65 Personal Computer System. I must admit, this computer has a lot of charm, and the team that developed it has done a fantastic job. 
 
 For many developers, it may be sacrilege not to program directly on the hardware, despite the perfect keyboard that the MEGA65 offers. However, there are many developers who are used to modern development environments and want to take advantage of Visual Studio Code's benefits. That's why I decided to write this extension, to enable comfortable development of BASIC programs and, at the same time, to utilize the many features of Visual Studio Code for managing source code.
 
