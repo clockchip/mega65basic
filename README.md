@@ -31,7 +31,7 @@ For using the petcat tool from the VICE emulator to tokenize your BASIC program 
 
 To use the latest version of petcat with Mega65 Basic command support, simply [download](https://github.com/VICE-Team/svn-mirror/blob/main/vice/src/tools/petcat/petcat.c) and compile the most recent version of the tool. The following picture displays the code lines of the petcat.c file, highlighting the added support for Mega65 Basic commands.
 
-![petcat.c code](https://github.com/clockchip/mega65basic/blob/main/images/petcat.png)
+![petcat.c code](/images/petcat.png)
 
 ## Usage
 
@@ -39,7 +39,7 @@ You might follow this process to develop your program:
 
 1. Before you start coding select one of the provided themes to ensure proper syntax highlighting.
 
-![select theme](https://github.com/clockchip/mega65basic/blob/main/images/themeselect.png)
+![select theme](/images/themeselect.png)
 
 2. Create a folder structure like this:
 
@@ -55,7 +55,7 @@ You might follow this process to develop your program:
 
 5. Test the program with [Xemu](https://github.lgb.hu/xemu/) using the "Run PRG directly" command.
 
-![use Xemu](https://github.com/clockchip/mega65basic/blob/main/images/petcat.gif)
+![use Xemu](/images/petcat.gif)
 
 6. Connect your MEGA65 using a [JTAG](https://dansanderson.com/mega65/welcome/using-jtag.html) connector to the computer which is running the M65Connect.
 
@@ -76,45 +76,45 @@ The provided features are:
 ### Syntax highlighting
 An example of syntax highlighting is:
 
-![mega65basic highlighting](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_syntaxhigh.png)
+![mega65basic highlighting](/images/mega65basic_syntaxhigh.png)
 
 ### Snippets
 
 Snippets suggest to you the syntax of the commands:
 
-![REM Snippets](https://github.com/clockchip/mega65basic/blob/main/images/snippets1.gif)
+![REM Snippets](/images/snippets1.gif)
 
 ### Using Syntax Suggestions and Optional Parameters
 
 When entering a BASIC command, you encounter syntax suggestions displayed on the screen. To ignore these suggestions enter the command and press the SPACE bar.
 
-![Usage1](https://github.com/clockchip/mega65basic/blob/main/images/circle1.gif)
+![Usage1](/images/circle1.gif)
 
 To select different parameters of a command, press the TAB key. This will allow you to cycle through and select the desired parameter for your command.
 
-![Usage2](https://github.com/clockchip/mega65basic/blob/main/images/circle2.gif)
+![Usage2](/images/circle2.gif)
 
 Some BASIC commands may have optional parameters.
 
-![Command](https://github.com/clockchip/mega65basic/blob/main/images/circle.png)
+![Command](/images/circle.png)
 
 f you do not want to use these optional parameters, simply delete them using the BACKSPACE key.
 
-![Usage3](https://github.com/clockchip/mega65basic/blob/main/images/circle3.gif)
+![Usage3](/images/circle3.gif)
 
 If you do want to use the optional parameters of a command, press TAB twice. This will allow you to enter and specify the desired parameter for your command.
 
-![Usage4](https://github.com/clockchip/mega65basic/blob/main/images/circle4.gif)
+![Usage4](/images/circle4.gif)
 
 ### Snippets for Control characters
 Special characters in MEGA65 BASIC are referred to as control characters, such as:
 
-![Clears screen](https://github.com/clockchip/mega65basic/blob/main/images/01.png)
-![Place cursor in top left corner](https://github.com/clockchip/mega65basic/blob/main/images/02.png)
-![Cursor one step right](https://github.com/clockchip/mega65basic/blob/main/images/03.png)
-![Cursor one step to the left](https://github.com/clockchip/mega65basic/blob/main/images/04.png)
-![Cursor one position down](https://github.com/clockchip/mega65basic/blob/main/images/05.png)
-![Cursor one position up](https://github.com/clockchip/mega65basic/blob/main/images/06.png)
+![Clears screen](/images/01.png)
+![Place cursor in top left corner](/images/02.png)
+![Cursor one step right](/images/03.png)
+![Cursor one step to the left](/images/04.png)
+![Cursor one position down](/images/05.png)
+![Cursor one position up](/images/06.png)
 
 Books and old magazines use a specific syntax to represent special characters, which involves enclosing the name of the control character in curly braces. For instance, the control character that clears the screen is represented as {clr}.
 
@@ -128,7 +128,7 @@ But pay attention: Inside print statement you have to remove the double apex, pr
 
 However, it's important to note that within a print statement, the double quotes must be removed so that "{clr}" becomes {clr}, and then print chr$(147).
 
-![c64basicv2 Control Character Snippet](https://github.com/clockchip/mega65basic/blob/main/images/control_chr.gif)
+![c64basicv2 Control Character Snippet](/images/control_chr.gif)
 
 An alternative option is to use petcat to directly write the following Control characters without needing to convert them to chr$.
 
