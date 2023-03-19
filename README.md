@@ -1,4 +1,4 @@
-![mega65basic logo](https://github.com/clockchip/mega65basic/blob/main/images/mega65basic_logo.png)
+![mega65basic logo](/images/mega65basic_logo.png)
 
 # MEGA65 BASIC Language VSCode Extension
 
