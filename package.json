@@ -2,10 +2,19 @@
   "name": "mega65basic",
   "displayName": "MEGA65 BASIC 65",
   "description": "Syntax highlighting and snippets for MEGA65 BASIC language",
-  "publisher": "clockchip",
-  "author": "clockchip",
   "version": "0.0.5",
+  "icon": "images/mega65basic_logo.png", 
+  "author": "clockchip",
+  "publisher": "clockchip",
   "license": "BSD-3-Clause License",
+  "homepage": "https://github.com/clockchip/mega65basic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clockchip/mega65basic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clockchip/mega65basic/issues"
+  }, 
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -22,30 +31,8 @@
     "pet",
     "c65",
     "c64"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/clockchip/mega65basic"
-  },
-  "bugs": {
-    "url": "https://github.com/clockchip/mega65basic/issues"
-  },
-  "icon": "images/mega65basic_logo.png",    
+  ], 
   "contributes": {
-    "themes": [
-      {
-          "id": "Visual Studio Dark - mega65basic",
-          "label": "Dark (Visual Studio - mega65basic)",
-          "uiTheme": "vs-dark",
-          "path": "./themes/mega65basic_dark_vs.json"
-      },
-      {
-          "id": "Visual Studio Light - mega65basic",
-          "label": "Light (Visual Studio - mega65basic)",
-          "uiTheme": "vs",
-          "path": "./themes/mega65basic_light_vs.json"
-      }
-    ],    
     "languages": [{
       "id": "mega65basic",
       "aliases": ["Mega65 Basic", "mega65basic"],
@@ -56,6 +43,18 @@
         "dark": "./icons/mega65_dark.png"       
       }
     }],
+    "themes": [{
+      "id": "Visual Studio Dark - mega65basic",
+      "label": "Dark (Visual Studio - mega65basic)",
+      "uiTheme": "vs-dark",
+      "path": "./themes/mega65basic_dark_vs.json"
+      },
+      {
+      "id": "Visual Studio Light - mega65basic",
+      "label": "Light (Visual Studio - mega65basic)",
+      "uiTheme": "vs",
+      "path": "./themes/mega65basic_light_vs.json"
+    }],    
     "grammars": [{
       "language": "mega65basic",
       "scopeName": "source.mega65basic",
@@ -63,15 +62,16 @@
     }],
     "configurationDefaults": {
       "[mega65basic]": {
-          "editor.rulers": [40, 80],
-          "editor.suggest.showWords": false
-       }
-      },
-      "snippets": [
-        {
-           "language": "mega65basic",
-           "path": "./snippets.json"
+        "editor.rulers": [40, 80],
+        "editor.suggest.showWords": false,
+        "editor.quickSuggestions": false
         }
-     ]
+      }
+    },
+      "snippets": [{
+        "language": "mega65basic",
+        "path": "./snippets.json"
+      }
+    ]
   }
 }
