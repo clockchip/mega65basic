@@ -39,7 +39,7 @@
       "extensions": [".bas",".prg"],
       "configuration": "./language-configuration.json",
       "icon": {
-       "light": "./icons/mega65_light.png",
+        "light": "./icons/mega65_light.png",
         "dark": "./icons/mega65_dark.png"       
       }
     }],
@@ -48,7 +48,8 @@
       "label": "Dark (Visual Studio - mega65basic)",
       "uiTheme": "vs-dark",
       "path": "./themes/mega65basic_dark_vs.json"
-      },
+      }
+      ,
       {
       "id": "Visual Studio Light - mega65basic",
       "label": "Light (Visual Studio - mega65basic)",
@@ -64,7 +65,6 @@
       "[mega65basic]": {
         "editor.rulers": [40, 80],
         "editor.suggest.showWords": false
-        }
       }
     },
       "snippets": [{
@@ -72,4 +72,5 @@
         "path": "./snippets.json"
       }
     ]
+  }  
 }
